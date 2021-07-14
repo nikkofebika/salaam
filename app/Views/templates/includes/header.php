@@ -7,12 +7,10 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6">
-
 				<div class="quick-contacts">
 					<span><i class="icon-phone"></i> (00) 123 456 789</span>
 					<span><i class="icon-envelope"></i><a href="#"><span class="__cf_email__" data-cfemail="fd98909c9491bd9a909c9491d39e9290">[email&#160;protected]</span></a></span>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -67,8 +65,6 @@
 				<li><a href="pricing.html">Buy Tickets</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
-
 		</nav>
 	</div>
-
 </header>
