@@ -3,12 +3,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-3 col-xs-12">
 						<h3><img src="assets/img/logo_salaam.png" alt=""></h3>
-						<p>
-							If you think you have the passion,
-							attitude and capability to join us
-							the next big software company
-							s so that we can get the convers.
-						</p>
+						<p>The preferred Indonesian muslim channel The preferred Indonesian muslim channel The preferred Indonesian muslim channel</p>
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-12">
 						<h3>Support</h3>

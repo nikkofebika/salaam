@@ -6,7 +6,7 @@
 			<div class="item active">
 				<img src="assets/img/slider/bg-1.jpg" alt="">
 				<div class="carousel-caption">
-					<h2 class="wow fadeInRight" data-wow-delay="300ms">Impression - Startup Event<br> Join us be The First to Book Your Ticket</h2>
+					<h2 class="wow fadeInRight" data-wow-delay="300ms">The preferred Indonesian muslim channel</h2>
 					<div class="buttons wow fadeInDown" data-wow-delay="0.2s"><a class="btn btn-lg btn-border" href="#">Registration</a></div>
 					<a data-scroll href="#featured">
 						<div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms">
@@ -18,7 +18,7 @@
 			<div class="item">
 				<img src="assets/img/slider/bg-2.jpg" alt="">
 				<div class="carousel-caption">
-					<h2 class="wow fadeInUp" data-wow-delay="300ms">Opportunity to showcase<br> your product and services to attendees</h2>
+					<h2 class="wow fadeInUp" data-wow-delay="300ms">The preferred Indonesian muslim channel</h2>
 					<div class="buttons">
 						<a class="btn btn-lg btn-common wow fadeInLeft" data-wow-delay="300ms" href="#">Buy Tickets</a>
 						<a class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="300ms" href="#">Know More</a>
@@ -33,7 +33,7 @@
 			<div class="item">
 				<img src="assets/img/slider/bg-3.jpg" alt="">
 				<div class="carousel-caption">
-					<h2 class="wow fadeInDown" data-wow-delay="300ms">Expert and Love to Speak? <br> Apply as Speaker for Taking Session</h2>
+					<h2 class="wow fadeInDown" data-wow-delay="300ms">The preferred Indonesian muslim channel</h2>
 					<div class="wow fadeInUp" data-wow-delay="300ms"><a class="btn btn-lg btn-common" href="#">Apply Now</a></div>
 					<a data-scroll href="#featured">
 						<div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms">
@@ -64,7 +64,7 @@
 							<i class="icon-energy"></i>
 						</div>
 						<div class="featured-content">
-							<h4>Get Inspired</h4>
+							<h4>Lorem Ipsum</h4>
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 							<i class="icon-people"></i>
 						</div>
 						<div class="featured-content">
-							<h4>Meet New Faces</h4>
+							<h4>Lorem Ipsum</h4>
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
 						</div>
 					</div>
@@ -86,7 +86,40 @@
 							<i class="icon-graph"></i>
 						</div>
 						<div class="featured-content">
-							<h4>Fresh Tech Insights</h4>
+							<h4>Lorem Ipsum</h4>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="featured-box wow fadeInLeft" data-wow-delay="0.1s">
+						<div class="icon">
+							<i class="icon-energy"></i>
+						</div>
+						<div class="featured-content">
+							<h4>Lorem Ipsum</h4>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="featured-box wow fadeInLeft" data-wow-delay="0.2s">
+						<div class="icon">
+							<i class="icon-people"></i>
+						</div>
+						<div class="featured-content">
+							<h4>Lorem Ipsum</h4>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="featured-box wow fadeInLeft" data-wow-delay="0.3s">
+						<div class="icon">
+							<i class="icon-graph"></i>
+						</div>
+						<div class="featured-content">
+							<h4>Lorem Ipsum</h4>
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
 						</div>
 					</div>
@@ -95,40 +128,127 @@
 		</div>
 	</div>
 </section>
-
-
-<section id="sponsors" class="section">
+<section id="speakers" class="section">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Our Sponsors</h2>
+				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Speakers</h2>
 				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.1s">
-					<a href="#"><img src="assets/img/sponsors/logo-01.png" alt=""></a>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="speakers-member wow fadeIn" data-wow-delay="0.1s">
+					<div class="member-img">
+						<img src="assets/img/teacher/img-1.png" alt="">
+					</div>
+					<div class="member-desc">
+						<a href="#" title="Jon Doe">Jon Doe</a></h3>
+						<h5>CEO, Peloton Cycle</h5>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+						<div class="social-icon">
+							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.2s">
-					<a href="#"><img src="assets/img/sponsors/logo-02.png" alt=""></a>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="speakers-member wow fadeIn" data-wow-delay="0.3s">
+					<div class="member-img">
+						<img src="assets/img/teacher/img-2.png" alt="">
+					</div>
+					<div class="member-desc">
+						<h3><a href="#" title="Natali Aero">Natali Aero</a></h3>
+						<h5>Co-founder, Hometeam</h5>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+						<div class="social-icon">
+							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.3s">
-					<a href="#"><img src="assets/img/sponsors/logo-03.png" alt=""></a>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="speakers-member wow fadeIn" data-wow-delay="0.5s">
+					<div class="member-img">
+						<img src="assets/img/teacher/img-3.png" alt="">
+					</div>
+					<div class="member-desc">
+						<h3><a href="#" title="Leo Amber">Leo Amber</a></h3>
+						<h5>Director, Via</h5>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+						<div class="social-icon">
+							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.4s">
-					<a href="#"><img src="assets/img/sponsors/logo-04.png" alt=""></a>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="speakers-member wow fadeIn" data-wow-delay="0.7s">
+					<div class="member-img">
+						<img src="assets/img/teacher/img-4.png" alt="">
+					</div>
+					<div class="member-desc">
+						<h3><a href="#" title="Jeson Evar">Jeson Evar</a></h3>
+						<h5>Co-founder, theSkimm</h5>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+						<div class="social-icon">
+							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+						</div>
+					</div>
 				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="speakers-member wow fadeIn" data-wow-delay="0.9s">
+					<div class="member-img">
+						<img src="assets/img/teacher/img-5.png" alt="">
+					</div>
+					<div class="member-desc">
+						<h3><a href="#" title="Lamba Kureshi">Lamba Kureshi</a></h3>
+						<h5>Professor, Boston University</h5>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+						<div class="social-icon">
+							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="speakers-member wow fadeIn" data-wow-delay="1s">
+					<div class="member-img">
+						<img src="assets/img/teacher/img-6.png" alt="">
+					</div>
+					<div class="member-desc">
+						<h3><a href="#" title="Leo Amber">Leo Amber</a></h3>
+						<h5>CEO, lrisVR</h5>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+						<div class="social-icon">
+							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="more-btn text-center">
+				<a href="speakers.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">show more</a>
 			</div>
 		</div>
 	</div>
 </section>
-
-
 <section id="gallery" class="section">
 	<div class="container">
 		<div class="col-md-12">
@@ -211,137 +331,6 @@
 		</div>
 	</div>
 </section>
-
-
-<section id="speakers" class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Meet Our Speakers</h2>
-				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.1s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-1.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3>Jon Doe</h3>
-						<h5>CEO, Peloton Cycle</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.3s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-2.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3>Natali Aero</h3>
-						<h5>Co-founder, Hometeam</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.5s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-3.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3>Leo Amber</h3>
-						<h5>Director, Via</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.7s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-4.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3>Jeson Eva</h3>
-						<h5>Co-founder, theSkimm</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.9s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-5.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3>Lamba Kureshi</h3>
-						<h5>Professor, Boston University</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="1s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-6.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3>Leo Amber</h3>
-						<h5>CEO, lrisVR</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="more-btn text-center">
-				<a href="speakers.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">show more</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-
 <section id="blog" class="section">
 	<div class="container">
 		<div class="row">
@@ -406,4 +395,113 @@
 		</div>
 	</div>
 </section>
+<section id="sponsors" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Our Sponsors</h2>
+				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.1s">
+					<a href="#"><img src="assets/img/sponsors/logo-01.png" alt=""></a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.2s">
+					<a href="#"><img src="assets/img/sponsors/logo-02.png" alt=""></a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.3s">
+					<a href="#"><img src="assets/img/sponsors/logo-03.png" alt=""></a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.4s">
+					<a href="#"><img src="assets/img/sponsors/logo-04.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="main-content">
+		<section id="contact">
+			<div class="container">
+				<div class="row wow fadeInDown mt-5" data-wow-delay="0.3s">
+					<div class="col-md-8 col-sm-7 contact-form">
+						<form role="form" id="contactForm" data-toggle="validator">
+							<div class="title-header">
+								<h3 class="title-medium pull-left">Send us a message</h3>
+								<div class="icon pull-right"><i class="icon-envelope"></i></div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="label-line">
+										<span class="span"></span>
+										<label class="label transition">Name</label>
+										<input type="text" class="input" id="name" required data-error="Please enter your name">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="label-line">
+										<span class="span"></span>
+										<label class="label transition">Email</label>
+										<input type="email" class="input" id="email" required data-error="Please enter your email">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="label-line textarea">
+										<span class="span"></span>
+										<label class="label transition">Message</label>
+										<textarea id="message" class="input" required data-error="Write your message"></textarea>
+										<div class="help-block with-errors"></div>
+									</div>
+									<button type="submit" id="form-submit" class="btn btn-common">Send <i class="icon-paper-plane" aria-hidden="true"></i></button>
+									<div id="msgSubmit" class="h3 text-center hidden"></div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-4 col-sm-5 information">
+						<div class="title-header">
+							<h3 class="title-medium">Contact Information</h3>
+						</div>
+						<div class="contact-datails">
+							<div class="icon">
+								<i class="fa fa-map-marker"></i>
+							</div>
+							<div class="info">
+								<span class="detail">Marriott Marquis, San Francisco, CA<br> United States</span>
+							</div>
+						</div>
+						<div class="contact-datails">
+							<div class="icon">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="info">
+								<span class="detail">+123456789000</span>
+							</div>
+						</div>
+						<div class="contact-datails">
+							<div class="icon">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div class="info">
+								<span class="detail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4cdcac2cbe4c5c6c7c08ac7cbc9">[email&#160;protected]</a></span>
+							</div>
+						</div>
+						<div class="social text-center">
+							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 <?= $this->endSection() ?>
