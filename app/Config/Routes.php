@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Home::index');
 // $routes->get('/', 'Home::index');
 $routes->get('contact-us', 'Index::contact_us');
+$routes->get('about', 'Index::about');
 
 /*
  * --------------------------------------------------------------------

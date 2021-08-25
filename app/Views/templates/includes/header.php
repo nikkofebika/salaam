@@ -1,67 +1,34 @@
-<header id="header-wrap">
-	<div id="roof" class="hidden-xs">
-		<div class="container p-0">
-			<div class="col-md-6 col-sm-6">
-				<div class="info-bar-address">
-					<i class="icon-location-pin"></i> Jakarta, Indonesia
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<div class="quick-contacts">
-					<span><i class="icon-phone"></i> 021 123 456 789</span>
-					<span><i class="icon-envelope"></i><a href="#"><span class="__cf_email__" data-cfemail="fd98909c9491bd9a909c9491d39e9290">salaam@gmail.com</span></a></span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="navigation-menu">
-		<nav class="navbar navbar-default navbar-event" role="navigation" data-spy="affix" data-offset-top="20">
-			<div class="container">
-				<a class="navbar-brand pull-right mt-4" href="<?php echo site_url() ?>"><img src="assets/img/logo_salaam.png" alt=""></a>
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse" id="navbar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="<?php echo site_url() ?>">Home</a></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Sub Page</a></li>
-								<li><a href="#">Sub Page</a></li>
-								<li><a href="#">Sub Page</a></li>
-								<li><a href="#">Sub Page</a></li>
-								<li><a href="#">Sub Page</a></li>
-							</ul>
-						</li>
-						<li><a href="<?php echo site_url('/speakers') ?>">Speakers</a></li>
-						<li><a href="<?php echo site_url('/blog') ?>">Blog</a></li>
-						<li><a href="<?php echo site_url('contact-us') ?>">Contact</a></li>
-						<li><a href="#">About Us</a></li>
-					</ul>
-				</div>
-			</div>
+<header id="header" class="header fixed-top">
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-			<ul class="wpb-mobile-menu">
-				<li class="active"><a href="<?php echo site_url() ?>">Home</a></li>
-				<li><a href="#">Pages</a>
-					<ul class="dropdown">
-						<li><a href="#">Sub Page</a></li>
-						<li><a href="#">Sub Page</a></li>
-						<li><a href="#">Sub Page</a></li>
-						<li><a href="#">Sub Page</a></li>
-						<li><a href="#">Sub Page</a></li>
+		<a href="<?php echo site_url() ?>" class="logo d-flex align-items-center">
+			<img src="<?php echo base_url('assets/logo_salaam.png') ?>" alt="">
+		</a>
+
+		<nav id="navbar" class="navbar">
+			<ul>
+				<li><a class="nav-link scrollto active" href="<?php echo site_url() ?>">Home</a></li>
+				<!-- <li><a href="<?php // echo site_url('blog') ?>">Blog</a></li> -->
+				<li><a href="<?php echo site_url('speakers') ?>">Speakers</a></li>
+				<li><a href="<?php echo site_url('video') ?>">Video</a></li>
+				<li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
+					<ul>
+						<li><a href="<?php echo site_url('about') ?>">About</a></li>
+						<li><a href="<?php echo site_url('contact-us') ?>">Contact</a></li>
+						<!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+							<ul>
+								<li><a href="#">Deep Drop Down 1</a></li>
+								<li><a href="#">Deep Drop Down 2</a></li>
+								<li><a href="#">Deep Drop Down 3</a></li>
+								<li><a href="#">Deep Drop Down 4</a></li>
+								<li><a href="#">Deep Drop Down 5</a></li>
+							</ul>
+						</li> -->
 					</ul>
 				</li>
-				<li><a href="<?php echo site_url('/speakers') ?>">Speakers</a></li>
-				<li><a href="<?php echo site_url('/blog') ?>">Blog</a></li>
-				<li><a href="<?php echo site_url('contact-us') ?>">Contact</a></li>
-				<li><a href="#">About Us</a></li>
+				<li><a class="btn-get-started getstarted" href="#">Get Started</a></li>
 			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>
 	</div>
 </header>

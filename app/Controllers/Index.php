@@ -10,4 +10,8 @@ class Index extends BaseController {
 	public function contact_us() {
 		return view('contact_us');
 	}
+
+	public function about() {
+		return view('about');
+	}
 }

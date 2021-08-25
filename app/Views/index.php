@@ -1,507 +1,911 @@
 <?= $this->extend('templates/default') ?>
 <?= $this->section('content') ?>
-<div id="carousel-area">
-	<div id="carousel-slider" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<img src="assets/img/slider/bg-1.jpg" alt="">
-				<div class="carousel-caption">
-					<h2 class="wow fadeInRight" data-wow-delay="300ms">The preferred Indonesian muslim channel</h2>
-					<div class="buttons wow fadeInDown" data-wow-delay="0.2s"><a class="btn btn-lg btn-border" href="#">Registration</a></div>
-					<a data-scroll href="#featured">
-						<div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms">
-							<span></span>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="item">
-				<img src="assets/img/slider/bg-2.jpg" alt="">
-				<div class="carousel-caption">
-					<h2 class="wow fadeInUp" data-wow-delay="300ms">The preferred Indonesian muslim channel</h2>
-					<div class="buttons">
-						<a class="btn btn-lg btn-common wow fadeInLeft" data-wow-delay="300ms" href="#">Buy Tickets</a>
-						<a class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="300ms" href="#">Know More</a>
+<section id="hero" class="hero d-flex align-items-center">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 d-flex flex-column justify-content-center">
+				<h1 data-aos="fade-up">The preferred Indonesian muslim channel</h1>
+				<h2 data-aos="fade-up" data-aos-delay="400">The preferred Indonesian muslim channel The preferred Indonesian muslim channel</h2>
+				<div data-aos="fade-up" data-aos-delay="600">
+					<div class="text-center text-lg-start">
+						<a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+							<span>Get Started</span>
+							<i class="bi bi-arrow-right"></i>
+						</a>
 					</div>
-					<a data-scroll href="#featured">
-						<div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms">
-							<span></span>
-						</div>
-					</a>
 				</div>
 			</div>
-			<div class="item">
-				<img src="assets/img/slider/bg-3.jpg" alt="">
-				<div class="carousel-caption">
-					<h2 class="wow fadeInDown" data-wow-delay="300ms">The preferred Indonesian muslim channel</h2>
-					<div class="wow fadeInUp" data-wow-delay="300ms"><a class="btn btn-lg btn-common" href="#">Apply Now</a></div>
-					<a data-scroll href="#featured">
-						<div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms">
-							<span></span>
-						</div>
-					</a>
-				</div>
+			<div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+				<img src="<?php echo base_url('assets/img/hero-img.png') ?>" class="img-fluid" alt="">
 			</div>
+		</div>
+	</div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+	<!-- ======= Team Section ======= -->
+		<section id="team" class="team">
+
+			<div class="container" data-aos="fade-up">
+
+				<header class="section-header">
+					<h2>Speakers</h2>
+					<p>Pendakwah</p>
+				</header>
+
+				<div class="row gy-4">
+				<?php
+				$data = [
+					[
+						"name" => "Habib Husein Ja'far Al-Hadar",
+						"foto" => "1.png",
+						"desc" => "Penceramah & Direktur Akademi Kebudayaan Islam Jakarta",
+					],
+					[
+						"name" => "K. H. Cholil Nafis, Lc. Ph.D",
+						"foto" => "2.png",
+						"desc" => "Penceramah & Ketua Dewan Pimpinan Majelis Ulama Indonesia (MUI) 2020-2025",
+					],
+					[
+						"name" => "K.H. Abdul Muiz Ali",
+						"foto" => "3.png",
+						"desc" => "Penceramah & Wakil Sekretaris Komisi Fatwa Majelis Ulama Indonesia (MUI) 2020-2025",
+					],
+					[
+						"name" => "Ust. H. Muhammad Nur Hayid",
+						"foto" => "4.png",
+						"desc" => "Penceramah & Ketua Pengurus Besar Nahdlatul Ulama (PBNU) 2018-2020",
+					],
+				];
+				foreach ($data as $d) { ?>
+					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+						<div class="member">
+							<div class="member-img">
+								<img src="<?php echo base_url('assets/speakers/'.$d["foto"]) ?>" class="img-fluid" alt="">
+								<div class="social">
+									<a href=""><i class="bi bi-twitter"></i></a>
+									<a href=""><i class="bi bi-facebook"></i></a>
+									<a href=""><i class="bi bi-instagram"></i></a>
+									<a href=""><i class="bi bi-linkedin"></i></a>
+								</div>
+							</div>
+							<div class="member-info">
+								<a href="#"><h4><?php echo $d["name"] ?></h4></a>
+								<!-- <span><?php // echo $d["desc"] ?></span> -->
+								<p><?php echo $d["desc"] ?></p>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+
+			</div>
+
+		</section>
+
+	<!-- ======= Values Section ======= -->
+	<section id="values" class="values">
+
+		<div class="container" data-aos="fade-up">
+
+			<header class="section-header">
+				<h2>Our Values</h2>
+				<p>Odit est perspiciatis laborum et dicta</p>
+			</header>
+
+			<div class="row">
+
+				<div class="col-lg-4">
+					<div class="box" data-aos="fade-up" data-aos-delay="200">
+						<img src="<?php echo base_url('assets/img/values-1.png') ?>" class="img-fluid" alt="">
+						<h3>Ad cupiditate sed est odio</h3>
+						<p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 mt-4 mt-lg-0">
+					<div class="box" data-aos="fade-up" data-aos-delay="400">
+						<img src="<?php echo base_url('assets/img/values-2.png') ?>" class="img-fluid" alt="">
+						<h3>Voluptatem voluptatum alias</h3>
+						<p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 mt-4 mt-lg-0">
+					<div class="box" data-aos="fade-up" data-aos-delay="600">
+						<img src="<?php echo base_url('assets/img/values-3.png') ?>" class="img-fluid" alt="">
+						<h3>Fugit cupiditate alias nobis.</h3>
+						<p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 
-		<a class="left carousel-control" href="#carousel-slider" role="button" data-slide="prev">
-			<span class="icon-arrow-left" aria-hidden="true"></span>
-		</a>
-		<a class="right carousel-control" href="#carousel-slider" role="button" data-slide="next">
-			<span class="icon-arrow-right" aria-hidden="true"></span>
-		</a>
-	</div>
-</div>
-<section id="featured" class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Visi & Misi</h2>
-				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-				<div class="col-md-4 col-sm-6">
-					<div class="featured-box wow fadeInLeft" data-wow-delay="0.1s">
-						<div class="icon">
-							<i class="icon-energy"></i>
-						</div>
-						<div class="featured-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+	</section><!-- End Values Section -->
+
+	<!-- ======= Counts Section ======= -->
+	<!-- <section id="counts" class="counts">
+		<div class="container" data-aos="fade-up">
+
+			<div class="row gy-4">
+
+				<div class="col-lg-3 col-md-6">
+					<div class="count-box">
+						<i class="bi bi-emoji-smile"></i>
+						<div>
+							<span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+							<p>Happy Clients</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="featured-box wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="icon">
-							<i class="icon-people"></i>
-						</div>
-						<div class="featured-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="featured-box wow fadeInLeft" data-wow-delay="0.3s">
-						<div class="icon">
-							<i class="icon-graph"></i>
-						</div>
-						<div class="featured-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="count-box">
+						<i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+						<div>
+							<span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+							<p>Projects</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="featured-box wow fadeInLeft" data-wow-delay="0.1s">
-						<div class="icon">
-							<i class="icon-energy"></i>
-						</div>
-						<div class="featured-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="featured-box wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="icon">
-							<i class="icon-people"></i>
-						</div>
-						<div class="featured-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="count-box">
+						<i class="bi bi-headset" style="color: #15be56;"></i>
+						<div>
+							<span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+							<p>Hours Of Support</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="featured-box wow fadeInLeft" data-wow-delay="0.3s">
-						<div class="icon">
-							<i class="icon-graph"></i>
-						</div>
-						<div class="featured-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="count-box">
+						<i class="bi bi-people" style="color: #bb0852;"></i>
+						<div>
+							<span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+							<p>Hard Workers</p>
 						</div>
 					</div>
 				</div>
+
 			</div>
+
 		</div>
-	</div>
-</section>
-<section id="speakers" class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Speakers</h2>
-				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.1s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-1.png" alt="">
-					</div>
-					<div class="member-desc">
-						<a href="#" title="Jon Doe">Jon Doe</a></h3>
-						<h5>CEO, Peloton Cycle</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-						</div>
-					</div>
+	</section> -->
+
+	<!-- ======= Features Section ======= -->
+	<!-- <section id="features" class="features">
+
+		<div class="container" data-aos="fade-up">
+
+			<header class="section-header">
+				<h2>Features</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+			</header>
+
+			<div class="row">
+
+				<div class="col-lg-6">
+					<img src="<?php echo base_url('assets/img/features.png') ?>" class="img-fluid" alt="">
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.3s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-2.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3><a href="#" title="Natali Aero">Natali Aero</a></h3>
-						<h5>Co-founder, Hometeam</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.5s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-3.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3><a href="#" title="Leo Amber">Leo Amber</a></h3>
-						<h5>Director, Via</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.7s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-4.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3><a href="#" title="Jeson Evar">Jeson Evar</a></h3>
-						<h5>Co-founder, theSkimm</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="0.9s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-5.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3><a href="#" title="Lamba Kureshi">Lamba Kureshi</a></h3>
-						<h5>Professor, Boston University</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="speakers-member wow fadeIn" data-wow-delay="1s">
-					<div class="member-img">
-						<img src="assets/img/teacher/img-6.png" alt="">
-					</div>
-					<div class="member-desc">
-						<h3><a href="#" title="Leo Amber">Leo Amber</a></h3>
-						<h5>CEO, lrisVR</h5>
-						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-						<div class="social-icon">
-							<a class="social" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="more-btn text-center">
-				<a href="speakers.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">show more</a>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="gallery" class="section">
-	<div class="container">
-		<div class="col-md-12">
-			<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Our Gallery</h2>
-			<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-		</div>
-		<div class="gallery-wrap wow fadeInDown">
-			<div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-8.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/img-1.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-2.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/img-2.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-3.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/lagre-3.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-4.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/img-4.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-5.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/img-5.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-6.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/img-6.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="gallery-item">
-					<a href="#"><img src="assets/img/gallery/img-7.jpg" alt=""></a>
-					<div class="overlay">
-						<div class="icons">
-							<a class="preview lightbox" href="assets/img/gallery/img-7.jpg"><i class="icon-eye"></i></a>
-							<a class="link" href="gallery.html"><i class="icon-link"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="more-btn">
-				<a href="gallery.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">show more</a>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="blog" class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Blog</h2>
-				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="blog-item wow fadeInRight" data-wow-delay="0.2s">
-					<div class="blog-image">
-						<a href="#">
-							<img src="assets/img/blog/img1.jpg" alt="">
-						</a>
-					</div>
-					<div class="blog-info">
-						<h3><a href="single-post.html">We make beautiful days with older adults</a></h3>
-						<div class="meta">
-							<span class="meta-part"><a href="#"><i class="icon-eye"></i> 2500</a></span>
-							<span class="meta-part"><a href="#"><i class="icon-bubble"></i> 100</a></span>
-							<span class="meta-part"><a href="#"><i class="icon-calendar"></i> 21 Mar, 2016</a></span>
-						</div>
-						<p>Lorem ipsum dolor sit amet cons tetuer adipiscing elit. dolor sit...</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-					<div class="blog-image">
-						<a href="#">
-							<img src="assets/img/blog/img2.jpg" alt="">
-						</a>
-					</div>
-					<div class="blog-info">
-						<h3><a href="single-post.html">Change-makers economic</a></h3>
-						<div class="meta">
-							<span class="meta-part"><a href="#"><i class="icon-eye"></i> 2500</a></span>
-							<span class="meta-part"><a href="#"><i class="icon-bubble"></i> 100</a></span>
-							<span class="meta-part"><a href="#"><i class="icon-calendar"></i> 21 Mar, 2016</a></span>
-						</div>
-						<p>Lorem ipsum dolor sit amet cons tetuer adipiscing elit. dolor sit...</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="blog-item wow fadeInLeft" data-wow-delay="0.2s">
-					<div class="blog-image">
-						<a href="#">
-							<img src="assets/img/blog/img3.jpg" alt="">
-						</a>
-					</div>
-					<div class="blog-info">
-						<h3><a href="single-post.html">It’s no secret that virtual reality</a></h3>
-						<div class="meta">
-							<span class="meta-part"><a href="#"><i class="icon-eye"></i> 2500</a></span>
-							<span class="meta-part"><a href="#"><i class="icon-bubble"></i> 100</a></span>
-							<span class="meta-part"><a href="#"><i class="icon-calendar"></i> 21 Mar, 2016</a></span>
-						</div>
-						<p>Lorem ipsum dolor sit amet cons tetuer adipiscing elit. dolor sit...</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="sponsors" class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="section-title wow fadeInUp" data-wow-delay="0s">Our Sponsors</h2>
-				<p class="section-subcontent wow fadeInUp" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. A <br> enean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.1s">
-					<a href="#"><img src="assets/img/sponsors/logo-01.png" alt=""></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.2s">
-					<a href="#"><img src="assets/img/sponsors/logo-02.png" alt=""></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.3s">
-					<a href="#"><img src="assets/img/sponsors/logo-03.png" alt=""></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="spnsors-logo wow fadeInUp" data-wow-delay="0.4s">
-					<a href="#"><img src="assets/img/sponsors/logo-04.png" alt=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<div class="main-content">
-		<section id="contact">
-			<div class="container">
-				<div class="row wow fadeInDown mt-5" data-wow-delay="0.3s">
-					<div class="col-md-8 col-sm-7 contact-form">
-						<form role="form" id="contactForm" data-toggle="validator">
-							<div class="title-header">
-								<h3 class="title-medium pull-left">Send us a message</h3>
-								<div class="icon pull-right"><i class="icon-envelope"></i></div>
+
+				<div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+					<div class="row align-self-center gy-4">
+
+						<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+							<div class="feature-box d-flex align-items-center">
+								<i class="bi bi-check"></i>
+								<h3>Eos aspernatur rem</h3>
 							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="label-line">
-										<span class="span"></span>
-										<label class="label transition">Name</label>
-										<input type="text" class="input" id="name" required data-error="Please enter your name">
-										<div class="help-block with-errors"></div>
-									</div>
+						</div>
+
+						<div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+							<div class="feature-box d-flex align-items-center">
+								<i class="bi bi-check"></i>
+								<h3>Facilis neque ipsa</h3>
+							</div>
+						</div>
+
+						<div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+							<div class="feature-box d-flex align-items-center">
+								<i class="bi bi-check"></i>
+								<h3>Volup amet voluptas</h3>
+							</div>
+						</div>
+
+						<div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+							<div class="feature-box d-flex align-items-center">
+								<i class="bi bi-check"></i>
+								<h3>Rerum omnis sint</h3>
+							</div>
+						</div>
+
+						<div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+							<div class="feature-box d-flex align-items-center">
+								<i class="bi bi-check"></i>
+								<h3>Alias possimus</h3>
+							</div>
+						</div>
+
+						<div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+							<div class="feature-box d-flex align-items-center">
+								<i class="bi bi-check"></i>
+								<h3>Repellendus mollitia</h3>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row feature-icons" data-aos="fade-up">
+				<h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
+
+				<div class="row">
+
+					<div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
+						<img src="<?php echo base_url('assets/img/features-3.png') ?>" class="img-fluid p-4" alt="">
+					</div>
+
+					<div class="col-xl-8 d-flex content">
+						<div class="row align-self-center gy-4">
+
+							<div class="col-md-6 icon-box" data-aos="fade-up">
+								<i class="ri-line-chart-line"></i>
+								<div>
+									<h4>Corporis voluptates sit</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 								</div>
-								<div class="col-md-6">
-									<div class="label-line">
-										<span class="span"></span>
-										<label class="label transition">Email</label>
-										<input type="email" class="input" id="email" required data-error="Please enter your email">
-										<div class="help-block with-errors"></div>
-									</div>
+							</div>
+
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+								<i class="ri-stack-line"></i>
+								<div>
+									<h4>Ullamco laboris nisi</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 								</div>
+							</div>
+
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+								<i class="ri-brush-4-line"></i>
+								<div>
+									<h4>Labore consequatur</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								</div>
+							</div>
+
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								<i class="ri-magic-line"></i>
+								<div>
+									<h4>Beatae veritatis</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								</div>
+							</div>
+
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+								<i class="ri-command-line"></i>
+								<div>
+									<h4>Molestiae dolor</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								</div>
+							</div>
+
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+								<i class="ri-radar-line"></i>
+								<div>
+									<h4>Explicabo consectetur</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section> -->
+
+	<!-- ======= Services Section ======= -->
+	<section id="services" class="services">
+
+		<div class="container" data-aos="fade-up">
+
+			<header class="section-header">
+				<h2>Services</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+			</header>
+
+			<div class="row gy-4">
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+					<div class="service-box blue">
+						<i class="ri-discuss-line icon"></i>
+						<h3>Nesciunt Mete</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+					<div class="service-box orange">
+						<i class="ri-discuss-line icon"></i>
+						<h3>Eosle Commodi</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+					<div class="service-box green">
+						<i class="ri-discuss-line icon"></i>
+						<h3>Ledo Markt</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+					<div class="service-box red">
+						<i class="ri-discuss-line icon"></i>
+						<h3>Asperiores Commodi</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+					<div class="service-box purple">
+						<i class="ri-discuss-line icon"></i>
+						<h3>Velit Doloremque.</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+					<div class="service-box pink">
+						<i class="ri-discuss-line icon"></i>
+						<h3>Dolori Architecto</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section><!-- End Services Section -->
+
+	<!-- ======= F.A.Q Section ======= -->
+	<!-- <section id="faq" class="faq">
+
+		<div class="container" data-aos="fade-up">
+
+			<header class="section-header">
+				<h2>F.A.Q</h2>
+				<p>Frequently Asked Questions</p>
+			</header>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="accordion accordion-flush" id="faqlist1">
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+									Non consectetur a erat nam at lectus urna duis?
+								</button>
+							</h2>
+							<div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+								<div class="accordion-body">
+									Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+									Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+								</button>
+							</h2>
+							<div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+								<div class="accordion-body">
+									Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+									Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
+								</button>
+							</h2>
+							<div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+								<div class="accordion-body">
+									Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+
+					<div class="accordion accordion-flush" id="faqlist2">
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+									Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+								</button>
+							</h2>
+							<div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+								<div class="accordion-body">
+									Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+									Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+								</button>
+							</h2>
+							<div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+								<div class="accordion-body">
+									Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+									Varius vel pharetra vel turpis nunc eget lorem dolor?
+								</button>
+							</h2>
+							<div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+								<div class="accordion-body">
+									Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section> -->
+
+	<!-- ======= Portfolio Section ======= -->
+		<!-- <section id="portfolio" class="portfolio">
+
+			<div class="container" data-aos="fade-up">
+
+				<header class="section-header">
+					<h2>Portfolio</h2>
+					<p>Check our latest work</p>
+				</header>
+
+				<div class="row" data-aos="fade-up" data-aos-delay="100">
+					<div class="col-lg-12 d-flex justify-content-center">
+						<ul id="portfolio-flters">
+							<li data-filter="*" class="filter-active">All</li>
+							<li data-filter=".filter-app">App</li>
+							<li data-filter=".filter-card">Card</li>
+							<li data-filter=".filter-web">Web</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-1.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>App 1</h4>
+								<p>App</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-1.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-2.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>Web 3</h4>
+								<p>Web</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-2.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-3.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>App 2</h4>
+								<p>App</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-3.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-4.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>Card 2</h4>
+								<p>Card</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-4.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-5.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>Web 2</h4>
+								<p>Web</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-5.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-6.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>App 3</h4>
+								<p>App</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-6.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-7.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>Card 1</h4>
+								<p>Card</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-7.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-8.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>Card 3</h4>
+								<p>Card</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-8.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+						<div class="portfolio-wrap">
+							<img src="<?php echo base_url('assets/img/portfolio/portfolio-9.jpg') ?>" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>Web 3</h4>
+								<p>Web</p>
+								<div class="portfolio-links">
+									<a href="<?php echo base_url('assets/img/portfolio/portfolio-9.jpg') ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+									<a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section> -->
+		<!-- End Portfolio Section -->
+
+		<!-- ======= Testimonials Section ======= -->
+		<!-- <section id="testimonials" class="testimonials">
+
+			<div class="container" data-aos="fade-up">
+
+				<header class="section-header">
+					<h2>Testimonials</h2>
+					<p>What they are saying about us</p>
+				</header>
+
+				<div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
+					<div class="swiper-wrapper">
+
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+								<div class="profile mt-auto">
+									<img src="<?php echo base_url('assets/img/testimonials/testimonials-1.jpg') ?>" class="testimonial-img" alt="">
+									<h3>Saul Goodman</h3>
+									<h4>Ceo &amp; Founder</h4>
+								</div>
+							</div>
+
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+								<div class="profile mt-auto">
+									<img src="<?php echo base_url('assets/img/testimonials/testimonials-2.jpg') ?>" class="testimonial-img" alt="">
+									<h3>Sara Wilsson</h3>
+									<h4>Designer</h4>
+								</div>
+							</div>
+
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+								<div class="profile mt-auto">
+									<img src="<?php echo base_url('assets/img/testimonials/testimonials-3.jpg') ?>" class="testimonial-img" alt="">
+									<h3>Jena Karlis</h3>
+									<h4>Store Owner</h4>
+								</div>
+							</div>
+
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+								<div class="profile mt-auto">
+									<img src="<?php echo base_url('assets/img/testimonials/testimonials-4.jpg') ?>" class="testimonial-img" alt="">
+									<h3>Matt Brandon</h3>
+									<h4>Freelancer</h4>
+								</div>
+							</div>
+
+						<div class="swiper-slide">
+							<div class="testimonial-item">
+								<div class="stars">
+									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+								<div class="profile mt-auto">
+									<img src="<?php echo base_url('assets/img/testimonials/testimonials-5.jpg') ?>" class="testimonial-img" alt="">
+									<h3>John Larson</h3>
+									<h4>Entrepreneur</h4>
+								</div>
+							</div>
+
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+			</div>
+
+		</section> -->
+
+		<!-- ======= Clients Section ======= -->
+		<section id="clients" class="clients">
+
+			<div class="container" data-aos="fade-up">
+
+				<header class="section-header">
+					<!-- <h2>Our Clients</h2> -->
+					<p>Partners</p>
+				</header>
+
+				<div class="clients-slider swiper-container">
+					<div class="swiper-wrapper align-items-center">
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-1.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-2.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-3.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-4.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-5.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-6.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-7.png') ?>" class="img-fluid" alt=""></div>
+						<div class="swiper-slide"><img src="<?php echo base_url('assets/img/clients/client-8.png') ?>" class="img-fluid" alt=""></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+
+		</section><!-- End Clients Section -->
+
+		<!-- <section id="recent-blog-posts" class="recent-blog-posts">
+
+			<div class="container" data-aos="fade-up">
+
+				<header class="section-header">
+					<h2>Blog</h2>
+					<p>Recent posts form our Blog</p>
+				</header>
+
+				<div class="row">
+
+					<div class="col-lg-4">
+						<div class="post-box">
+							<div class="post-img"><img src="<?php echo base_url('assets/img/blog/blog-1.jpg') ?>" class="img-fluid" alt=""></div>
+							<span class="post-date">Tue, September 15</span>
+							<h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit</h3>
+							<a href="blog-singe.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="post-box">
+							<div class="post-img"><img src="<?php echo base_url('assets/img/blog/blog-2.jpg') ?>" class="img-fluid" alt=""></div>
+							<span class="post-date">Fri, August 28</span>
+							<h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
+							<a href="blog-singe.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="post-box">
+							<div class="post-img"><img src="<?php echo base_url('assets/img/blog/blog-3.jpg') ?>" class="img-fluid" alt=""></div>
+							<span class="post-date">Mon, July 11</span>
+							<h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
+							<a href="blog-singe.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section> -->
+
+		<!-- <section id="contact" class="contact">
+
+			<div class="container" data-aos="fade-up">
+
+				<header class="section-header">
+					<h2>Contact</h2>
+					<p>Contact Us</p>
+				</header>
+
+				<div class="row gy-4">
+
+					<div class="col-lg-6">
+
+						<div class="row gy-4">
+							<div class="col-md-6">
+								<div class="info-box">
+									<i class="bi bi-geo-alt"></i>
+									<h3>Address</h3>
+									<p>Permata Hijau<br>Kebayoran Lama, Jakarta Selatan</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="info-box">
+									<i class="bi bi-telephone"></i>
+									<h3>Call Us</h3>
+									<p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="info-box">
+									<i class="bi bi-envelope"></i>
+									<h3>Email Us</h3>
+									<p>info@example.com<br>contact@example.com</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="info-box">
+									<i class="bi bi-clock"></i>
+									<h3>Open Hours</h3>
+									<p>Monday - Friday<br>9:00AM - 05:00PM</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-lg-6">
+						<form action="forms/contact.php" method="post" class="php-email-form">
+							<div class="row gy-4">
+
+								<div class="col-md-6">
+									<input type="text" name="name" class="form-control" placeholder="Your Name" required>
+								</div>
+
+								<div class="col-md-6 ">
+									<input type="email" class="form-control" name="email" placeholder="Your Email" required>
+								</div>
+
 								<div class="col-md-12">
-									<div class="label-line textarea">
-										<span class="span"></span>
-										<label class="label transition">Message</label>
-										<textarea id="message" class="input" required data-error="Write your message"></textarea>
-										<div class="help-block with-errors"></div>
-									</div>
-									<button type="submit" id="form-submit" class="btn btn-common">Send <i class="icon-paper-plane" aria-hidden="true"></i></button>
-									<div id="msgSubmit" class="h3 text-center hidden"></div>
-									<div class="clearfix"></div>
+									<input type="text" class="form-control" name="subject" placeholder="Subject" required>
 								</div>
+
+								<div class="col-md-12">
+									<textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+								</div>
+
+								<div class="col-md-12 text-center">
+									<div class="loading">Loading</div>
+									<div class="error-message"></div>
+									<div class="sent-message">Your message has been sent. Thank you!</div>
+
+									<button type="submit">Send Message</button>
+								</div>
+
 							</div>
 						</form>
+
 					</div>
-					<div class="col-md-4 col-sm-5 information">
-						<div class="title-header">
-							<h3 class="title-medium">Contact Information</h3>
-						</div>
-						<div class="contact-datails">
-							<div class="icon">
-								<i class="fa fa-map-marker"></i>
-							</div>
-							<div class="info">
-								<span class="detail">Marriott Marquis, San Francisco, CA<br> United States</span>
-							</div>
-						</div>
-						<div class="contact-datails">
-							<div class="icon">
-								<i class="fa fa-phone"></i>
-							</div>
-							<div class="info">
-								<span class="detail">+123456789000</span>
-							</div>
-						</div>
-						<div class="contact-datails">
-							<div class="icon">
-								<i class="fa fa-envelope"></i>
-							</div>
-							<div class="info">
-								<span class="detail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4cdcac2cbe4c5c6c7c08ac7cbc9">[email&#160;protected]</a></span>
-							</div>
-						</div>
-						<div class="social text-center">
-							<a class="social" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
-							<a class="social" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-						</div>
-					</div>
+
 				</div>
+
 			</div>
-		</section>
-	</div>
-<?= $this->endSection() ?>
+
+		</section> -->
+	</main>
+	<?= $this->endSection() ?>
