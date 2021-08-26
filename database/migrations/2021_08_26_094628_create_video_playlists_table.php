@@ -18,7 +18,7 @@ class CreateVideoPlaylistsTable extends Migration
             $table->string('playlist_id', 100);
             $table->string('title');
             $table->string('seo_title');
-            $table->smallInteger('priority');
+            $table->smallInteger('priority')->nullable();
             $table->text('description');
             $table->string('meta_keywords');
             // $table->boolean('is_active')->unsigned()->default(false);

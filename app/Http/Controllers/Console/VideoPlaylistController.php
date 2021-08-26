@@ -18,12 +18,10 @@ class VideoPlaylistController extends Controller {
         if ($request->ajax()) {
             // $data = VideoPlaylist::select(['id','title','playlist_id','priority','approved_by','created_at'])->get();
             $data = DB::table('video_playlists')
-            ->join('videos', 'video_playlists.playlist_id', '=', 'videos.playlist_id')
-            ->select('video_playlists.id','video_playlists.title','video_playlists.playlist_id','video_playlists.priority','video_playlists.approved_by','video_playlists.created_at', DB::raw('count(videos.id) as total_videos'))->groupBy('video_playlists.id')
-            ->get();
+            ->leftJoin('videos', 'video_playlists.playlist_id', '=', 'videos.playlist_id')
+            ->select('video_playlists.id','video_playlists.title','video_playlists.playlist_id','video_playlists.priority','video_playlists.approved_by','video_playlists.created_at', DB::raw('count(videos.id) as total_videos'))->orderBy('video_playlists.priority','desc')->groupBy('video_playlists.id')->get();
             return Datatables::of($data)
             ->addIndexColumn()
-            // ->addColumn('total', $this->debug($data->videos))
             ->editColumn('created_at', function($data) {return date('d-m-Y H:i', strtotime($data->created_at));})
             ->editColumn('approved_by', function($data) {
                 $checked = $data->approved_by !== null ? 'checked' : '';
@@ -38,60 +36,28 @@ class VideoPlaylistController extends Controller {
     }
 
     public function create() {
-        $video_playlist_types = DB::table('video_playlist_types')->get();
-        return view('console.video_playlists.create', ['page_title' => 'Tambah Data', 'active_menu' => 'video_playlists', 'video_playlist_types' => $video_playlist_types]);
+        return view('console.video_playlists.create', ['page_title' => 'Tambah Data', 'active_menu' => 'video_playlists']);
     }
 
     public function store(Request $request) {
         $request->validate([
-            'name' => 'required',
-            'color' => 'required',
-            // 'model' => 'required',
-            // 'tag' => 'required',
-            'location_id' => 'required|numeric',
-            'specific_location' => 'required',
-            'province_id' => 'required|numeric',
-            'regency_id' => 'required|numeric',
-            'district_id' => 'required|numeric',
-            'village_id' => 'required|numeric',
-            'video_playlist_type_id' => 'required|numeric',
-            'find_date' => 'required|date',
+            'playlist_id' => 'required|unique:video_playlists,playlist_id',
+            'title' => 'required|unique:video_playlists,title',
+            'meta_keywords' => 'required',
             'description' => 'required',
-            'images' => 'required',
-            // 'images' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'priority' => 'required|numeric',
+            'is_active' => 'required',
         ]);
 
-        $saved_images = [];
-        $images_number = 1;
-        foreach ($request->images as $image) {
-            if ($image->isValid()) {
-                $imageName = Str::slug($request->name, '-').'-'.time().'-'.$images_number++.'.'.$image->extension();
-                $dir = '/images/video_playlists/';
-                if (!file_exists(public_path($dir))) {
-                    mkdir(public_path($dir), 0777, true);
-                    chmod(public_path($dir), 0777);
-                }
-                $image->move(public_path($dir), $imageName);
-                $saved_images[] = $dir.$imageName;
-            }
-        }
-
         $video_playlist = new VideoPlaylist;
-        $video_playlist->user_id = auth()->guard('admin')->user()->id;
-        $video_playlist->name = $request->name;
-        $video_playlist->color = $request->color;
-        $video_playlist->model = $request->model;
-        $video_playlist->tag = $request->tag;
-        $video_playlist->location_id = $request->location_id;
-        $video_playlist->specific_location = $request->specific_location;
-        $video_playlist->province_id = $request->province_id;
-        $video_playlist->regency_id = $request->regency_id;
-        $video_playlist->district_id = $request->district_id;
-        $video_playlist->village_id = $request->village_id;
-        $video_playlist->video_playlist_type_id = $request->video_playlist_type_id;
-        $video_playlist->find_date = $request->find_date;
+        $video_playlist->playlist_id = $request->playlist_id;
+        $video_playlist->title = $request->title;
+        $video_playlist->seo_title = Str::slug($request->title, '-');
         $video_playlist->description = $request->description;
-        $video_playlist->images = json_encode($saved_images);
+        $video_playlist->meta_keywords = $request->meta_keywords;
+        $video_playlist->priority = intval($request->priority);
+        $video_playlist->approved_by = $request->is_active == 1 ? auth()->user()->id : null;
+        $video_playlist->created_by = auth()->user()->id;
         $video_playlist->save();
 
         return redirect('console/video_playlists')->with('notification', $this->flash_data('success', 'Berhasil', 'Video Playlist Berhasil Ditambahkan'));
@@ -103,87 +69,36 @@ class VideoPlaylistController extends Controller {
     }
 
     public function edit($id) {
-        $video_playlist = VideoPlaylist::findOrFail($id);
-        $provinces = DB::table('provinces')->get();
-        $regencies = DB::table('regencies')->where("province_id",$video_playlist->province_id)->get();
-        $districts = DB::table('districts')->where("regency_id",$video_playlist->regency_id)->get();
-        $villages = DB::table('villages')->where("district_id",$video_playlist->district_id)->get();
-        $locations = DB::table('locations')->get();
-        $video_playlist_types = DB::table('video_playlist_types')->get();
-        return view('console.video_playlists.edit', ['page_title' => 'Edit Data', 'active_menu' => 'video_playlists', 'video_playlist' => $video_playlist, 'provinces' => $provinces, 'regencies' => $regencies, 'districts' => $districts, 'villages' => $villages, 'locations' => $locations, 'video_playlist_types' => $video_playlist_types]);
+        $playlist = VideoPlaylist::findOrFail($id);
+        return view('console.video_playlists.edit', ['page_title' => 'Edit Data', 'active_menu' => 'video_playlists', 'playlist' => $playlist]);
     }
 
     public function update(Request $request, $id) {
         $request->validate([
-            'name' => 'required|unique:video_playlists,name,'.$id,
-            'color' => 'required',
-            'location_id' => 'required|numeric',
-            'specific_location' => 'required',
-            'province_id' => 'required|numeric',
-            'regency_id' => 'required|numeric',
-            'district_id' => 'required|numeric',
-            'village_id' => 'required|numeric',
-            'video_playlist_type_id' => 'required|numeric',
-            'find_date' => 'required|date',
+            'playlist_id' => 'required|unique:video_playlists,playlist_id,'.$id,
+            'title' => 'required|unique:video_playlists,title,'.$id,
+            'meta_keywords' => 'required',
             'description' => 'required',
+            'priority' => 'required|numeric',
+            'is_active' => 'required',
         ]);
 
         $video_playlist = VideoPlaylist::findOrFail($id);
-        if ($request->has('images') && count($request->images) > 0) {
-            $saved_images = [];
-            $images_number = 1;
-            foreach ($request->images as $image) {
-                if ($image->isValid()) {
-                    $imageName = Str::slug($request->name, '-').'-'.time().'-'.$images_number++.'.'.$image->extension();
-                    $dir = '/images/video_playlists/';
-                    if (!file_exists(public_path($dir))) {
-                        mkdir(public_path($dir), 0777, true);
-                        chmod(public_path($dir), 0777);
-                    }
-                    // unlink(public_path($video_playlist->image));
-                    $image->move(public_path($dir), $imageName);
-                    $saved_images[] = $dir.$imageName;
-                }
-            }
-
-            foreach (json_decode($video_playlist->images, true) as $image) {
-                unlink(public_path($image));
-            }
-        }
-
-        $video_playlist->user_id = auth()->guard('admin')->user()->id;
-        $video_playlist->name = $request->name;
-        $video_playlist->color = $request->color;
-        $video_playlist->model = $request->model;
-        $video_playlist->tag = $request->tag;
-        $video_playlist->location_id = $request->location_id;
-        $video_playlist->specific_location = $request->specific_location;
-        $video_playlist->province_id = $request->province_id;
-        $video_playlist->regency_id = $request->regency_id;
-        $video_playlist->district_id = $request->district_id;
-        $video_playlist->village_id = $request->village_id;
-        $video_playlist->video_playlist_type_id = $request->video_playlist_type_id;
-        $video_playlist->find_date = $request->find_date;
+        $video_playlist->playlist_id = $request->playlist_id;
+        $video_playlist->title = $request->title;
+        $video_playlist->seo_title = Str::slug($request->title, '-');
         $video_playlist->description = $request->description;
-        if ($request->has('images') && count($request->images) > 0) {
-            $video_playlist->images = json_encode($saved_images);
-        }
+        $video_playlist->meta_keywords = $request->meta_keywords;
+        $video_playlist->priority = intval($request->priority);
+        $video_playlist->approved_by = $request->is_active == 1 ? auth()->user()->id : null;
+        $video_playlist->updated_by = auth()->user()->id;
         $video_playlist->updated_at = date('Y-m-d H:i:s');
         $video_playlist->save();
         return redirect('console/video_playlists')->with('notification', $this->flash_data('success', 'Berhasil', 'Video Playlist Berhasil Diupdate'));
     }
 
     public function destroy($id) {
-        $video_playlist = VideoPlaylist::findOrFail($id);
-        // if (pathinfo($video_playlist->image, PATHINFO_FILENAME) !== 'sample_video_playlist') {
-        //     unlink(public_path($video_playlist->image));
-        // }
-        foreach (json_decode($video_playlist->images, true) as $img) {
-            if (file_exists(public_path($img))) {
-                unlink(public_path($img));
-            }
-        }
-        $video_playlist->delete();
+        VideoPlaylist::findOrFail($id)->delete();
         return redirect('console/video_playlists')->with('notification', $this->flash_data('success', 'Berhasil', 'Video Playlist Berhasil Dihapus'));
     }
 

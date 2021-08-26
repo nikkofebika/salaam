@@ -19,7 +19,7 @@
 				<div class="box">
 					<div class="box-header">
 						<?php if(session('notification')){echo session('notification');} ?>
-						<a href="{{ route('console.video_playlists.create') }}" title="Tambah Data" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
+						<a href="{{ route('console.videos.create') }}" title="Tambah Data" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
 					</div>
 					<div class="box-body">
 						<div class="table-responsive">
@@ -54,7 +54,7 @@
 		var table = $('#datatable').DataTable({
 			processing: true,
 			serverSide: true,
-			ajax: "{{ route('console.video_playlists.list') }}",
+			ajax: "{{ route('console.videos.list') }}",
 			columns: [
 			{data: 'id', name: 'id'},
 			{data: 'title', name: 'title'},
@@ -73,14 +73,14 @@
 		});
 		$('body').on('click','.check_approve',function() {
 			if ($(this).prop('checked')) {
-				ajax_approve_video_playlist($(this).data('playlist_id'), 1);
+				ajax_approve_video($(this).data('video_id'), 1);
 			} else {
-				ajax_approve_video_playlist($(this).data('playlist_id'), 0);
+				ajax_approve_video($(this).data('video_id'), 0);
 			}
 		});
 		$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-		function ajax_approve_video_playlist(id,val){
-			$.post(`{{ url('console/video_playlists/ajax_approve_video_playlist') }}`, {playlist_id:id, val:val}, function(res){
+		function ajax_approve_video(id,val){
+			$.post(`{{ url('console/videos/ajax_approve_video') }}`, {video_id:id, val:val}, function(res){
 				if (res.success){
 					toastr.success(res.message);
 				} else {

@@ -48,6 +48,9 @@ Route::group(['prefix' => 'console', 'as' => 'console.', 'middleware' => 'auth']
 	Route::get('video_playlists/list', [App\Http\Controllers\Console\VideoPlaylistController::class, 'get_video_playlists'])->name('video_playlists.list');
 	Route::post('video_playlists/ajax_approve_video_playlist', [App\Http\Controllers\Console\VideoPlaylistController::class, 'ajax_approve_video_playlist']);
 
+	Route::get('videos/list', [App\Http\Controllers\Console\VideoController::class, 'get_videos'])->name('videos.list');
+	Route::post('videos/ajax_approve_video', [App\Http\Controllers\Console\VideoController::class, 'ajax_approve_video']);
+
 	Route::get('locations', [App\Http\Controllers\Console\LocationController::class, 'index']);
 	Route::get('locations/list', [App\Http\Controllers\Console\LocationController::class, 'get_locations'])->name('locations.list');
 	Route::post('locations/store', [App\Http\Controllers\Console\LocationController::class, 'store'])->name('locations.store');
@@ -61,5 +64,6 @@ Route::group(['prefix' => 'console', 'as' => 'console.', 'middleware' => 'auth']
 	Route::resources([
 		'users' => App\Http\Controllers\Console\UserController::class,
 		'video_playlists' => App\Http\Controllers\Console\VideoPlaylistController::class,
+		'videos' => App\Http\Controllers\Console\VideoController::class,
 	]);
 });
