@@ -39,41 +39,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except(['redirectToProvider', 'handleProviderCallback', 'logout']);
+        $this->middleware('guest')->except('logout');
     }
-
-    public function redirectToProvider($provider) {
-        return Socialite::driver($provider)->redirect();
-    }
-
-    public function handleProviderCallback($provider) {
-        $user = Socialite::driver($provider)->user();
-        $authUser = $this->findOrCreateUser($user, $provider);
-        Auth::login($authUser, true);
-        return redirect('/dashboard');
-    }
-
-    public function findOrCreateUser($user, $provider) {
-        $authUser = User::where('provider_id', $user->id)->first();
-        if ($authUser) {
-            return $authUser;
-        }
-        else{
-            $data = User::create([
-                'name'     => $user->name,
-                'email'    => !empty($user->email)? $user->email : '',
-                'provider' => $provider,
-                'provider_id' => $user->id,
-                'is_active' => 1,
-                'email_verified_at' => date('Y-m-d H:i:s'),
-            ]);
-            return $data;
-        }
-    }
-
 
     public function logout(Request $request) {
-        auth()->guard('web')->logout();
+        // auth()->guard('web')->logout();
+        auth()->logout();
 
         $request->session()->invalidate();
 
@@ -81,4 +52,33 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+    // public function redirectToProvider($provider) {
+    //     return Socialite::driver($provider)->redirect();
+    // }
+
+    // public function handleProviderCallback($provider) {
+    //     $user = Socialite::driver($provider)->user();
+    //     $authUser = $this->findOrCreateUser($user, $provider);
+    //     Auth::login($authUser, true);
+    //     return redirect('/dashboard');
+    // }
+
+    // public function findOrCreateUser($user, $provider) {
+    //     $authUser = User::where('provider_id', $user->id)->first();
+    //     if ($authUser) {
+    //         return $authUser;
+    //     }
+    //     else{
+    //         $data = User::create([
+    //             'name'     => $user->name,
+    //             'email'    => !empty($user->email)? $user->email : '',
+    //             'provider' => $provider,
+    //             'provider_id' => $user->id,
+    //             'is_active' => 1,
+    //             'email_verified_at' => date('Y-m-d H:i:s'),
+    //         ]);
+    //         return $data;
+    //     }
+    // }
 }

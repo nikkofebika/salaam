@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
     		UserSeeder::class,
-            ItemSeeder::class,
-            LocationSeeder::class,
-            ItemTypeSeeder::class,
+            SpeakerSeeder::class,
+            VideoPlaylistSeeder::class,
+            VideoSeeder::class,
     	]);
     }
 }

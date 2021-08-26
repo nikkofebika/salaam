@@ -12,51 +12,39 @@
 			<div class="col-lg-3 col-xs-6">
 				<div class="small-box bg-aqua">
 					<div class="inner">
-						<h3>{{$items}}</h3>
-						<p>Items</p>
-					</div>
-					<div class="icon">
-						<i class="fa fa-newspaper-o"></i>
-					</div>
-					<a href="{{ url('console/articles') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			{{-- <div class="col-lg-3 col-xs-6">
-				<div class="small-box bg-green">
-					<div class="inner">
-						<!-- <h3>{{$users}}</h3> -->
-						<p>User</p>
-					</div>
-					<div class="icon">
-						<i class="fa fa-users"></i>
-					</div>
-					<!-- <a href="{{ url('console/users') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a> -->
-				</div>
-			</div>
-			<div class="col-lg-3 col-xs-6">
-				<div class="small-box bg-yellow">
-					<div class="inner">
-						<!-- <h3>{{$admins}}</h3> -->
+						<h3>{{$admins}}</h3>
 						<p>Admin</p>
 					</div>
 					<div class="icon">
 						<i class="fa fa-users"></i>
 					</div>
-					<!-- <a href="{{ url('console/users') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a> -->
+					<a href="{{ url('console/users') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<div class="small-box bg-green">
+					<div class="inner">
+						<h3>{{$videos}}</h3>
+						<p>Video</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-video-camera"></i>
+					</div>
+					<a href="{{ url('console/videos') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
 			<div class="col-lg-3 col-xs-6">
 				<div class="small-box bg-yellow">
 					<div class="inner">
-						<!-- <h3>{{$facilities}}</h3> -->
-						<p>Fasilitas</p>
+						<h3>{{$video_playlists}}</h3>
+						<p>Video Playlist</p>
 					</div>
 					<div class="icon">
-						<i class="fa fa-bookmark-o"></i>
+						<i class="fa fa-list"></i>
 					</div>
-					<!-- <a href="{{ url('console/facilities') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a> -->
+					<a href="{{ url('console/video_playlists') }}" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
-			</div> --}}
+			</div>
 		</div>
 	</section>
 </div>

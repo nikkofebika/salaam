@@ -24,26 +24,23 @@
 					<i class="fa fa-users"></i> <span>User</span>
 				</a>
 			</li>
-			<li class="{{ $active_menu == 'items' ? 'active' : '' }}">
-				<a href="{{ url('console/items') }}">
-					<i class="fa fa-list"></i> <span>Item</span>
+			<li class="{{ $active_menu == 'video_playlists' ||  $active_menu == 'videos' ? 'active' : '' }} treeview">
+				<a href="#">
+					<i class="fa fa-video-camera"></i> <span>Youtube</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
 				</a>
-			</li>
-			<li class="{{ $active_menu == 'item_types' ? 'active' : '' }}">
-				<a href="{{ url('console/item_types') }}">
-					<i class="fa fa-list"></i> <span>Jenis Item</span>
-				</a>
-			</li>
-			<li class="{{ $active_menu == 'locations' ? 'active' : '' }}">
-				<a href="{{ url('console/locations') }}">
-					<i class="fa fa-map-marker"></i> <span>Lokasi</span>
-				</a>
+				<ul class="treeview-menu">
+					<li class="{{ $active_menu == 'video_playlists' ? 'active' : '' }}"><a href="{{ url('console/video_playlists') }}"><i class="fa fa-circle-o"></i> Playlist</a></li>
+					<li class="{{ $active_menu == 'videos' ? 'active' : '' }}"><a href="{{ url('console/videos') }}"><i class="fa fa-circle-o"></i> Video</a></li>
+				</ul>
 			</li>
 			<li>
 				<a href="{{ url('console/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 					<i class="fa fa-sign-out"></i> <span>Logout</span>
 				</a>
-				<form id="logout-form" action="{{ url('console/logout') }}" method="POST" class="d-none">
+				<form id="logout-form" action="{{ route('console.logout') }}" method="POST" class="d-none">
 					@csrf
 				</form>
 			</li>

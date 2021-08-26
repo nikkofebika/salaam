@@ -43,6 +43,7 @@ class AuthController extends Controller {
 	}
 
 	public function logout(Request $request){
+		dd($request->all());
 		Auth::guard('admin')->logout();
 
 		$request->session()->invalidate();

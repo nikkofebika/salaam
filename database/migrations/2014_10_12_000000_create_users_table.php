@@ -18,14 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable();
-            $table->string('phone',13)->nullable();
-            $table->unsignedBigInteger('village_id')->nullable();
-            $table->text('address')->nullable();
-            $table->boolean('is_admin')->unsigned()->default(false);
+            $table->string('password');
+            $table->string('phone', 13);
             $table->boolean('is_active')->unsigned()->default(false);
-            $table->string('provider')->nullable();
-            $table->string('provider_id')->nullable();
+            $table->boolean('is_admin')->unsigned()->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
