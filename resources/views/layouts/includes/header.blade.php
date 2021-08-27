@@ -7,16 +7,16 @@
 
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li><a class="nav-link scrollto active" href="{{ url('/') }}">Home</a></li>
-				<li><a href="{{ url('pendakwah') }}">Pendakwah</a></li>
-				<li><a href="{{ url('video') }}">Video</a></li>
-				<li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
+				<li><a class="@if($active_menu == 'index') active @endif" href="{{ url('/') }}">Beranda</a></li>
+				<li><a class="@if($active_menu == 'pendakwah') active @endif" href="{{ url('pendakwah') }}">Pendakwah</a></li>
+				<li><a class="@if($active_menu == 'video') active @endif" href="{{ url('video') }}">Video</a></li>
+				<li class="dropdown"><a class="@if($active_menu == 'about' || $active_menu == 'contact-us') active @endif" href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>
-						<li><a href="{{ url('about') }}">About</a></li>
-						<li><a href="{{ url('contact-us') }}">Contact</a></li>
+						<li><a class="@if($active_menu == 'about') active @endif" href="{{ url('about') }}">About</a></li>
+						<li><a class="@if($active_menu == 'contact-us') active @endif" href="{{ url('contact-us') }}">Contact</a></li>
 						<!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
 							<ul>
-								<li><a href="#">Deep Drop Down 1</a></li>
+								<li><a href="#">Deep Drop Down 1</a></l>i
 								<li><a href="#">Deep Drop Down 2</a></li>
 								<li><a href="#">Deep Drop Down 3</a></li>
 								<li><a href="#">Deep Drop Down 4</a></li>

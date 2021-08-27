@@ -38,6 +38,17 @@
 				</div>
 				@endForeach
 			</div>
+			<div class="d-flex justify-content-center">
+				{{ $pendakwah->links('vendor.pagination.custom') }}
+			</div>
+
+			<!-- <div class="blog-pagination mt-5">
+				<ul class="justify-content-center">
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+				</ul>
+			</div> -->
 		</div>
 	</section>
 </main>

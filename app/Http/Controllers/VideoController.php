@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class VideoController extends Controller {
 	public function index() {
-		$videos = DB::table('videos')->select('id','name','image','description')->get();
-		return view("video", ['videos' => $videos]);
+		$videos = DB::table('videos')->select('id','video_id','title','mq_thumbnail')->get();
+		return view("video", ['active_menu' => 'video', 'videos' => $videos]);
 	}
 }

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('/pendakwah', [App\Http\Controllers\PendakwahController::class, 'index']);
+Route::get('/video', [App\Http\Controllers\VideoController::class, 'index']);
 
 Route::get('privacy-policy', function () {
 	return "PRIVACY POLICY PAGE";

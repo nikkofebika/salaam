@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class PendakwahController extends Controller {
 	public function index() {
-		$pendakwah = DB::table('speakers')->select('id','name','image','description')->get();
-		return view("pendakwah", ['pendakwah' => $pendakwah]);
+		$pendakwah = DB::table('speakers')->select('id','name','image','description')->paginate(4);
+		return view("pendakwah", ['active_menu' => 'pendakwah', 'pendakwah' => $pendakwah]);
 	}
 }
