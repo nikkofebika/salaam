@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('index');
-});
+Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/pendakwah', [App\Http\Controllers\PendakwahController::class, 'index']);
 
 Route::get('privacy-policy', function () {
 	return "PRIVACY POLICY PAGE";
@@ -42,8 +41,8 @@ Route::group(['prefix' => 'console', 'as' => 'console.', 'middleware' => 'auth']
 	Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 	Route::get('dashboard', [App\Http\Controllers\Console\DashboardController::class, 'index']);
 
-	Route::get('users/list', [App\Http\Controllers\Console\UserController::class, 'getUsers'])->name('users.list');
-	Route::post('users/ajax_active_user', [App\Http\Controllers\Console\UserController::class, 'ajax_active_user']);
+	Route::get('users/list', [App\Http\Controllers\Console\UserController::class, 'get_users'])->name('users.list');
+	Route::post('users/ajax_approve_user', [App\Http\Controllers\Console\UserController::class, 'ajax_approve_user']);
 
 	Route::get('video_playlists/list', [App\Http\Controllers\Console\VideoPlaylistController::class, 'get_video_playlists'])->name('video_playlists.list');
 	Route::post('video_playlists/ajax_approve_video_playlist', [App\Http\Controllers\Console\VideoPlaylistController::class, 'ajax_approve_video_playlist']);
@@ -51,19 +50,13 @@ Route::group(['prefix' => 'console', 'as' => 'console.', 'middleware' => 'auth']
 	Route::get('videos/list', [App\Http\Controllers\Console\VideoController::class, 'get_videos'])->name('videos.list');
 	Route::post('videos/ajax_approve_video', [App\Http\Controllers\Console\VideoController::class, 'ajax_approve_video']);
 
-	Route::get('locations', [App\Http\Controllers\Console\LocationController::class, 'index']);
-	Route::get('locations/list', [App\Http\Controllers\Console\LocationController::class, 'get_locations'])->name('locations.list');
-	Route::post('locations/store', [App\Http\Controllers\Console\LocationController::class, 'store'])->name('locations.store');
-	Route::post('locations/destroy', [App\Http\Controllers\Console\LocationController::class, 'destroy']);
-
-	Route::get('item_types', [App\Http\Controllers\Console\ItemTypeController::class, 'index']);
-	Route::get('item_types/list', [App\Http\Controllers\Console\ItemTypeController::class, 'get_item_types'])->name('item_types.list');
-	Route::post('item_types/store', [App\Http\Controllers\Console\ItemTypeController::class, 'store'])->name('item_types.store');
-	Route::post('item_types/destroy', [App\Http\Controllers\Console\ItemTypeController::class, 'destroy']);
+	Route::get('pendakwah/list', [App\Http\Controllers\Console\PendakwahController::class, 'get_pendakwah'])->name('pendakwah.list');
+	Route::post('pendakwah/ajax_approve_pendakwah', [App\Http\Controllers\Console\PendakwahController::class, 'ajax_approve_pendakwah']);
 
 	Route::resources([
 		'users' => App\Http\Controllers\Console\UserController::class,
 		'video_playlists' => App\Http\Controllers\Console\VideoPlaylistController::class,
 		'videos' => App\Http\Controllers\Console\VideoController::class,
+		'pendakwah' => App\Http\Controllers\Console\PendakwahController::class,
 	]);
 });

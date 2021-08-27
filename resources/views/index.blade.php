@@ -29,33 +29,11 @@
 				<p>Pendakwah</p>
 			</header>
 			<div class="row gy-4">
-				<?php $data = [
-					[
-						"name" => "Habib Husein Ja'far Al-Hadar",
-						"foto" => "1.png",
-						"desc" => "Penceramah & Direktur Akademi Kebudayaan Islam Jakarta",
-					],
-					[
-						"name" => "K. H. Cholil Nafis, Lc. Ph.D",
-						"foto" => "2.png",
-						"desc" => "Penceramah & Ketua Dewan Pimpinan Majelis Ulama Indonesia (MUI) 2020-2025",
-					],
-					[
-						"name" => "K.H. Abdul Muiz Ali",
-						"foto" => "3.png",
-						"desc" => "Penceramah & Wakil Sekretaris Komisi Fatwa Majelis Ulama Indonesia (MUI) 2020-2025",
-					],
-					[
-						"name" => "Ust. H. Muhammad Nur Hayid",
-						"foto" => "4.png",
-						"desc" => "Penceramah & Ketua Pengurus Besar Nahdlatul Ulama (PBNU) 2018-2020",
-					],
-				]; ?>
-				@foreach ($data as $d)
+				@foreach ($pendakwah as $p)
 				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
 					<div class="member">
 						<div class="member-img">
-							<img src="{{ asset('assets/speakers/'.$d["foto"]) }}" class="img-fluid" alt="">
+							<img src="{{ asset($p->image) }}" class="img-fluid" alt="{{ $p->name }}">
 							<div class="social">
 								<a href=""><i class="bi bi-twitter"></i></a>
 								<a href=""><i class="bi bi-facebook"></i></a>
@@ -64,9 +42,9 @@
 							</div>
 						</div>
 						<div class="member-info">
-							<a href="#"><h4>{{ $d["name"] }}</h4></a>
-							<!-- <span>{{ $d["desc"] }}</span> -->
-							<p>{{ $d["desc"] }}</p>
+							<a href="#"><h4>{{ $p->name }}</h4></a>
+							<!-- <span>{{ $p->image }}</span> -->
+							<p>{{ $p->description }}</p>
 						</div>
 					</div>
 				</div>

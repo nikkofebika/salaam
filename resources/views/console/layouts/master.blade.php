@@ -64,6 +64,11 @@
   <script src="{{ asset('backend/bower_components/fastclick/lib/fastclick.js') }}"></script>
   <!-- AdminLTE App -->
   <script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
+  <script>
+    $('form').submit(function(){
+      $('#btn_submit').attr('disabled',true).text('Submitting...');
+    });
+  </script>
   @stack('scripts')
 </body>
 </html>

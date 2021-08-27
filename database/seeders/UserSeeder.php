@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
     		'password' => Hash::make(12345678),
     		'phone' => "088888888888",
             'is_admin' => true,
-            'is_active' => true
+            'approved_by' => 1
         ]);
     }
 }

@@ -21,7 +21,12 @@
 			</li>
 			<li class="{{ $active_menu == 'users' ? 'active' : '' }}">
 				<a href="{{ url('console/users') }}">
-					<i class="fa fa-users"></i> <span>User</span>
+					<i class="fa fa-users"></i> <span>Admin</span>
+				</a>
+			</li>
+			<li class="{{ $active_menu == 'pendakwah' ? 'active' : '' }}">
+				<a href="{{ url('console/pendakwah') }}">
+					<i class="fa fa-users"></i> <span>Pendakwah</span>
 				</a>
 			</li>
 			<li class="{{ $active_menu == 'video_playlists' ||  $active_menu == 'videos' ? 'active' : '' }} treeview">

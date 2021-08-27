@@ -8,7 +8,7 @@
 		<nav id="navbar" class="navbar">
 			<ul>
 				<li><a class="nav-link scrollto active" href="{{ url('/') }}">Home</a></li>
-				<li><a href="{{ url('speakers') }}">Speakers</a></li>
+				<li><a href="{{ url('pendakwah') }}">Pendakwah</a></li>
 				<li><a href="{{ url('video') }}">Video</a></li>
 				<li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>

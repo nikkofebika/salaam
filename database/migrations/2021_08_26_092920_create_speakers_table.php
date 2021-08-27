@@ -16,9 +16,10 @@ class CreateSpeakersTable extends Migration
         Schema::create('speakers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('is_active')->unsigned()->default(false);
-            $table->text('description');
+            $table->smallInteger('approved_by')->nullable();
+            $table->smallInteger('priority')->nullable();
             $table->text('image');
+            $table->text('description');
             $table->timestamps();
         });
     }

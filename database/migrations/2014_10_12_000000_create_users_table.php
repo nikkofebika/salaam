@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone', 13);
-            $table->boolean('is_active')->unsigned()->default(false);
+            $table->smallInteger('approved_by')->nullable();
             $table->boolean('is_admin')->unsigned()->default(false);
             $table->rememberToken();
             $table->timestamps();

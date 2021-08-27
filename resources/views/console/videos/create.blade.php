@@ -13,29 +13,64 @@
 		<div class="row">
 			<div class="col-xs-12 m-t-md">
 				<div class="box box-primary">
-					<form method="POST" action="{{ url('console/video_playlists') }}">
+					<form method="POST" action="{{ url('console/videos') }}">
 						@csrf
 						<div class="box-body">
-							<div class="form-group @error('playlist_id') has-error @enderror">
-								<label>Playlist ID <span class="text-danger">*</span></label>
-								<input type="text" name="playlist_id" class="form-control" required placeholder="Playlist ID" value="{{ old('playlist_id') }}">
-								@error('playlist_id')
-								<span class="help-block">{{ $message }}</span>
-								@enderror
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group @error('playlist_id') has-error @enderror">
+										<label>Playlist <span class="text-danger">*</span></label>
+										<select name="playlist_id" class="form-control select2" required>
+											<option value="">- Pilih Playlist -</option>
+											@foreach($playlists as $p)
+											<option value="{{ $p->playlist_id }}" {{ old('playlist_id') == $p->playlist_id ? "selected" : "" }}>{{ $p->title }}</option>
+											@endForeach
+										</select>
+										@error('playlist_id')
+										<span class="help-block">{{ $message }}</span>
+										@enderror
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group @error('video_id') has-error @enderror">
+										<label>Video ID <span class="text-danger">*</span></label>
+										<input type="text" name="video_id" class="form-control" required placeholder="Video ID" value="{{ old('video_id') }}">
+										@error('video_id')
+										<span class="help-block">{{ $message }}</span>
+										@enderror
+									</div>
+								</div>
 							</div>
 							<div class="form-group @error('title') has-error @enderror">
-								<label>Nama Playlist <span class="text-danger">*</span></label>
-								<input type="text" name="title" class="form-control" required placeholder="Nama Playlist" value="{{ old('title') }}">
+								<label>Judul Video <span class="text-danger">*</span></label>
+								<input type="text" name="title" class="form-control" required placeholder="Judul Video" value="{{ old('title') }}">
 								@error('title')
 								<span class="help-block">{{ $message }}</span>
 								@enderror
 							</div>
-							<div class="form-group @error('meta_keywords') has-error @enderror">
-								<label>Meta Keywords <span class="text-danger">*</span></label>
-								<input type="text" name="meta_keywords" class="form-control" required placeholder="Meta Keywords" value="{{ old('meta_keywords') }}">
-								@error('meta_keywords')
-								<span class="help-block">{{ $message }}</span>
-								@enderror
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group @error('tgl_upload') has-error @enderror">
+										<label>Tanggal Upload <span class="text-danger">*</span></label>
+										<input name="tgl_upload" required readonly autocomplete="off" type="text" id="datetimepicker" class="form-control " value="{{ old('tgl_upload') }}">
+										@error('tgl_upload')
+										<span class="help-block">{{ $message }}</span>
+										@enderror
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="m-b-xs">Status <span class="text-danger">*</span></label>
+										<div class="radio m-t-xs">
+											<label>
+												<input type="radio" name="is_active" value="1"> Aktif
+											</label>
+											<label class="m-l-md">
+												<input type="radio" name="is_active" value="0" checked> Non Aktif
+											</label>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="form-group @error('description') has-error @enderror">
 								<label>Deskripsi Playlist <span class="text-danger">*</span></label>
@@ -44,23 +79,21 @@
 								<span class="help-block">{{ $message }}</span>
 								@enderror
 							</div>
-							<div class="form-group @error('priority') has-error @enderror">
-								<label>Urutan Playlist <span class="text-danger">*</span></label>
-								<input type="number" min="1" name="priority" class="form-control" required placeholder="Urutan Playlist" value="{{ old('priority') }}">
-								@error('priority')
+							<div class="form-group @error('meta_keywords') has-error @enderror">
+								<label>Meta Keywords <span class="text-danger">*</span></label>
+								<textarea name="meta_keywords" class="form-control" rows="5" required placeholder="Meta Keywords">{{ old('meta_keywords') }}</textarea>
+								@error('meta_keywords')
 								<span class="help-block">{{ $message }}</span>
 								@enderror
-							</div>
-							<div class="form-group">
-								<label class="m-b-xs">Status <span class="text-danger">*</span></label>
-								<div class="radio m-t-xs">
-									<label>
-										<input type="radio" name="is_active" id="optionsRadios1" value="1"> Active
-									</label>
-									<label class="m-l-md">
-										<input type="radio" name="is_active" id="optionsRadios2" value="0" checked> Non Aktif
-									</label>
-								</div>
+								<span class="form-text m-b-none">
+									Tips Menulis Meta Keywords :
+									<ol>
+										<li>Gunakan keywords yang ada korelasinya dengan nama kategori.</li>
+										<li>Penulisan keywords dipisahkan dengan tanda koma(,) tanpa menggunakan titik.</li>
+										<li>Contoh penulisan : Sepakbola, Liga Indonesia, Liga Inggris, Liga Spanyol, Bursa Transfer Pemain</li>
+										<li>Contoh Meta <strong>keywords</strong> dapat dilihat di <strong><a href="https://bola.kompas.com/" target="_blank">https://bola.kompas.com/</a></strong>. Lalu klik kanan, pilih View Page Source atau tekan tombol Ctrl+U. Lalu cari meta <strong>keywords</strong>.</li>
+									</ol>
+								</span>
 							</div>
 						</div>
 						<div class="box-footer">
@@ -79,59 +112,7 @@
 <script>
 	$(document).ready(function($) {
 		$('.select2').select2()
-		$('#datetimepicker').datetimepicker({
-			todayBtn:  1,
-			autoclose: 1,
-			todayHighlight: 1,
-		});
-		$('form').submit(function(){
-			$('#btn_submit').attr('disabled',true).text('Submitting...');
-		});
-		x = document.getElementById("password");
-		$('#btnShowHide').click(function(){
-			if (x.type === "password") {
-				$(this).children().removeClass('fa-eye').addClass('fa-eye-slash')
-				x.type = "text";
-			} else {
-				x.type = "password";
-				$(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
-			}
-		})
-		$("#select-province").change(function(){
-			var province_id = $(this).val();
-			if ($(this).val() === "") {
-				$("#select-regency").attr("disabled",true).val("").change();
-				$("#select-district").attr("disabled",true).val("").change();
-				$("#select-village").attr("disabled",true).val("").change();
-			} else {
-				$.get('{{ url("console/video_playlists/get_regencies") }}/'+province_id, function(html){
-					$("#select-regency").attr("disabled",false).html(html);
-				})
-			}
-		})
-
-		$("#select-regency").change(function(){
-			var regency_id = $(this).val();
-			if ($(this).val() === "") {
-				$("#select-district").attr("disabled",true).val("").change();
-				$("#select-village").attr("disabled",true).val("").change();
-			} else {
-				$.get('{{ url("console/video_playlists/get_districts") }}/'+regency_id, function(html){
-					$("#select-district").attr("disabled",false).html(html);
-				})
-			}
-		})
-
-		$("#select-district").change(function(){
-			var district_id = $(this).val();
-			if ($(this).val() === "") {
-				$("#select-village").attr("disabled",true).val("").change();
-			} else {
-				$.get('{{ url("console/video_playlists/get_villages") }}/'+district_id, function(html){
-					$("#select-village").attr("disabled",false).html(html);
-				})
-			}
-		})
+		$('#datetimepicker').datetimepicker();
 	});
 </script>
 @endpush

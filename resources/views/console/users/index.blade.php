@@ -3,23 +3,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{ asset('backend/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 <link href="{{ asset('backend/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
-<style type="text/css">
-	.options {
-		margin-top: 5px;
-		border-top: 1px dashed #19A689;
-		display: none;
-	}
-	.options small a {
-		color: #19A689;
-	}
-	.options small a:hover {
-		font-weight: bold;
-	}
-	ul.pagination li.active a {
-		background: #1ab394 !important;
-		color: white !important;
-	}
-</style>
 @endpush
 @section('content')
 <div class="content-wrapper">
@@ -36,7 +19,7 @@
 				<div class="box">
 					<div class="box-header">
 						<?php if(session('notification')){echo session('notification');} ?>
-						<a href="{{ route('console.videos.create') }}" title="Tambah Data" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
+						<a href="{{ route('console.users.create') }}" title="Tambah Data" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
 					</div>
 					<div class="box-body">
 						<div class="table-responsive">
@@ -44,13 +27,13 @@
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>Judul</th>
-										<th>Thumbnail</th>
-										<th>Playlist</th>
+										<th>Nama</th>
+										<th>Email</th>
+										<th>No. Telp</th>
 										<th>Aktif</th>
-										<th>Click</th>
-										<th>Published At</th>
 										<th>Created At</th>
+										<th>Updated At</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody></tbody>
@@ -72,33 +55,33 @@
 		var table = $('#datatable').DataTable({
 			processing: true,
 			serverSide: true,
-			ajax: "{{ route('console.videos.list') }}",
+			ajax: "{{ route('console.users.list') }}",
 			columns: [
 			{data: 'id', name: 'id'},
-			{data: 'title', name: 'title'},
-			{data: 'mq_thumbnail', name: 'mq_thumbnail', orderable: false},
-			{data: 'playlist', name: 'playlist'},
+			{data: 'name', name: 'name'},
+			{data: 'email', name: 'email'},
+			{data: 'phone', name: 'phone'},
 			{data: 'approved_by', name: 'approved_by'},
-			{data: 'click', name: 'click'},
-			{data: 'tgl_upload', name: 'tgl_upload'},
 			{data: 'created_at', name: 'created_at'},
+			{data: 'updated_at', name: 'updated_at'},
+			{
+				data: 'action', 
+				name: 'action',
+				orderable: false, 
+				searchable: false
+			},
 			]
-		});
-		$("body").on('mouseover', '.option_area', function(){
-			$(this).children('.options').show();
-		}).on('mouseout', '.option_area', function(){
-			$(this).children('.options').hide();
 		});
 		$('body').on('click','.check_approve',function() {
 			if ($(this).prop('checked')) {
-				ajax_approve_video($(this).data('video_id'), 1);
+				ajax_approve_user($(this).data('user_id'), 1);
 			} else {
-				ajax_approve_video($(this).data('video_id'), 0);
+				ajax_approve_user($(this).data('user_id'), 0);
 			}
 		});
 		$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-		function ajax_approve_video(id,val){
-			$.post(`{{ url('console/videos/ajax_approve_video') }}`, {video_id:id, val:val}, function(res){
+		function ajax_approve_user(id,val){
+			$.post(`{{ url('console/users/ajax_approve_user') }}`, {user_id:id, val:val}, function(res){
 				if (res.success){
 					toastr.success(res.message);
 				} else {
