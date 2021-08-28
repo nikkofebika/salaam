@@ -57,7 +57,10 @@
 			serverSide: true,
 			ajax: "{{ route('console.users.list') }}",
 			columns: [
-			{data: 'id', name: 'id'},
+			{data: 'id', sortable: 'false',
+			render: function (data, type, row, meta) {
+				return meta.row + meta.settings._iDisplayStart + 1;
+			}},
 			{data: 'name', name: 'name'},
 			{data: 'email', name: 'email'},
 			{data: 'phone', name: 'phone'},

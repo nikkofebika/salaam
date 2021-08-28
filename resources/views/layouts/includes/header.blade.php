@@ -25,7 +25,7 @@
 						</li> -->
 					</ul>
 				</li>
-				<li><a class="btn-get-started getstarted" href="#">Get Started</a></li>
+				<li><a class="getstarted" href="javascript:void(0)" style="padding: 8px 20px; color: #fff;">Get Started</a></li>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>

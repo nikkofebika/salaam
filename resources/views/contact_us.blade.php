@@ -1,10 +1,10 @@
-<?= $this->extend('templates/default') ?>
-<?= $this->section('content') ?>
+@extends('layouts.default')
+@section('content')
 <main id="main">
 	<section class="breadcrumbs">
 		<div class="container">
 			<ol>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="{{ url('/') }}">Beranda</a></li>
 				<li>Contact Us</li>
 			</ol>
 			<h2>Contact Us</h2>
@@ -101,4 +101,4 @@
 		</div>
 	</section>
 </main>
-<?= $this->endSection() ?>
+@endsection

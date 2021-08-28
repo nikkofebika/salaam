@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
-Route::get('/pendakwah', [App\Http\Controllers\PendakwahController::class, 'index']);
-Route::get('/video', [App\Http\Controllers\VideoController::class, 'index']);
+Route::get('pendakwah', [App\Http\Controllers\PendakwahController::class, 'index']);
+Route::get('pendakwah/{id}/{name}', [App\Http\Controllers\PendakwahController::class, 'detail']);
+Route::get('about', [App\Http\Controllers\IndexController::class, 'about']);
+Route::get('contact-us', [App\Http\Controllers\IndexController::class, 'contact_us']);
+Route::get('video', [VideoController::class, 'index']);
+Route::get('video/get_playlist_item/{playlist_id}/{playlist_seo_title}', [VideoController::class, 'get_playlist_item']);
+Route::get('video/click_video/{videoId}', [VideoController::class, 'click_video']);
+Route::get('video/{playlist_seo_title}/{video_seo_title?}', [VideoController::class, 'video_playlist']);
+Route::get('video/ajax_load_more_video/{offset}/{playlist_seo_title}/{video_seo_title}', [VideoController::class, 'ajax_load_more_video']);
+// Route::get('video/{playlistId}/playlist/{videoId}/play', [VideoController::class, 'click_video']);
 
 Route::get('privacy-policy', function () {
 	return "PRIVACY POLICY PAGE";

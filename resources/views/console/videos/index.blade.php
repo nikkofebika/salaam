@@ -74,7 +74,10 @@
 			serverSide: true,
 			ajax: "{{ route('console.videos.list') }}",
 			columns: [
-			{data: 'id', name: 'id'},
+			{data: 'id', sortable: 'false',
+			render: function (data, type, row, meta) {
+				return meta.row + meta.settings._iDisplayStart + 1;
+			}},
 			{data: 'title', name: 'title'},
 			{data: 'mq_thumbnail', name: 'mq_thumbnail', orderable: false},
 			{data: 'playlist', name: 'playlist'},

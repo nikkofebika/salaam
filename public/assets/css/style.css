@@ -155,7 +155,6 @@ section {
 .breadcrumbs ol li + li::before {
 	display: inline-block;
 	padding-right: 10px;
-	color: #8894f6;
 	content: "/";
 }
 
@@ -480,7 +479,7 @@ section {
 	font-size: 26px;
 }
 
-.hero .btn-get-started {
+.btn-get-started {
 	margin-top: 30px;
 	line-height: 0;
 	padding: 15px 40px;
@@ -491,20 +490,20 @@ section {
 	box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
 
-.hero .btn-get-started span {
+.btn-get-started span {
 	font-family: "Nunito", sans-serif;
 	font-weight: 600;
 	font-size: 16px;
 	letter-spacing: 1px;
 }
 
-.hero .btn-get-started i {
+.btn-get-started i {
 	margin-left: 5px;
 	font-size: 18px;
 	transition: 0.3s;
 }
 
-.hero .btn-get-started:hover i {
+.btn-get-started:hover i {
 	transform: translateX(5px);
 }
 
@@ -1017,10 +1016,10 @@ section {
 	text-decoration: line-through;
 }
 
-.pricing .btn-buy {
+.btn-buy {
 	display: inline-block;
 	padding: 8px 40px 10px 40px;
-	border-radius: 50px;
+	/*border-radius: 50px;*/
 	color: #00C6AC;
 	transition: none;
 	font-size: 16px;
@@ -1031,7 +1030,7 @@ section {
 	border: 1px solid #00C6AC;
 }
 
-.pricing .btn-buy:hover {
+.btn-buy:hover {
 	background: #00C6AC;
 	color: #fff;
 }
@@ -1413,7 +1412,7 @@ section {
 	padding: 60px 0;
 }
 
-.team .member {
+.member {
 	overflow: hidden;
 	text-align: center;
 	border-radius: 5px;
@@ -1422,12 +1421,12 @@ section {
 	transition: 0.3s;
 }
 
-.team .member .member-img {
+.member .member-img {
 	position: relative;
 	overflow: hidden;
 }
 
-.team .member .member-img:after {
+.member .member-img:after {
 	position: absolute;
 	content: "";
 	left: 0;
@@ -1439,7 +1438,7 @@ section {
 	z-index: 1;
 }
 
-.team .member .social {
+.member .social {
 	position: absolute;
 	right: -100%;
 	top: 30px;
@@ -1450,7 +1449,7 @@ section {
 	z-index: 2;
 }
 
-.team .member .social a {
+.member .social a {
 	transition: color 0.3s;
 	color: rgba(1, 41, 112, 0.5);
 	margin: 15px 12px;
@@ -1459,50 +1458,50 @@ section {
 	text-align: center;
 }
 
-.team .member .social a:hover {
+.member .social a:hover {
 	color: rgba(1, 41, 112, 0.8);
 }
 
-.team .member .social i {
+.member .social i {
 	font-size: 18px;
 }
 
-.team .member .member-info {
+.member .member-info {
 	padding: 10px 15px 20px 15px;
 }
 
-.team .member .member-info h4 {
+.member .member-info h4 {
 	font-weight: 700;
 	margin-bottom: 5px;
 	font-size: 20px;
 	color: #424143;
 }
 
-.team .member .member-info a h4:hover {
-	color: #00C6AC;
+.member .member-info a h4:hover, .member .member-info p:hover {
+	color: #00C6AC !important;
 }
 
-.team .member .member-info span {
+.member .member-info span {
 	display: block;
 	font-size: 14px;
 	font-weight: 400;
 	color: #aaaaaa;
 }
 
-.team .member .member-info p {
-	font-style: italic;
+.member .member-info p {
+	/*font-style: italic;*/
 	font-size: 14px;
 	padding-top: 15px;
 	line-height: 26px;
 	color: #5e5e5e;
 }
 
-.team .member:hover {
+.member:hover {
 	transform: scale(1.08);
 	box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
-.team .member:hover .social {
+.member:hover .social {
 	right: 8px;
 	opacity: 1;
 }

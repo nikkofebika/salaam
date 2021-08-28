@@ -1,10 +1,10 @@
-<?= $this->extend('templates/default') ?>
-<?= $this->section('content') ?>
+@extends('layouts.default')
+@section('content')
 <main id="main">
 	<section class="breadcrumbs">
 		<div class="container">
 			<ol>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="{{ url('/') }}">Beranda</a></li>
 				<li>About</li>
 			</ol>
 			<h2>About</h2>
@@ -24,7 +24,7 @@
 				</div>
 
 				<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-					<img src="<?php echo base_url('assets/img/about2.jpg') ?>" class="img-fluid" alt="">
+					<img src="{{ asset('assets/img/about2.jpg') }}" class="img-fluid" alt="">
 				</div>
 
 			</div>
@@ -81,4 +81,4 @@
 		</div>
 	</section> -->
 </main>
-<?= $this->endSection() ?>
+@endsection

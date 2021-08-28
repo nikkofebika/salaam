@@ -24,6 +24,7 @@
 	@yield('content')
 	@include('layouts.includes.footer')
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+	<script src="{{ asset('backend/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
 	<script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
 	<script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>

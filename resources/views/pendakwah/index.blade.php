@@ -4,16 +4,16 @@
 	<section class="breadcrumbs">
 		<div class="container">
 			<ol>
-				<li><a href="index.html">Home</a></li>
-				<li>Speakers</li>
+				<li><a href="{{ url('/') }}">Beranda</a></li>
+				<li>Pendakwah</li>
 			</ol>
-			<h2>Speakers</h2>
+			<h2>Pendakwah</h2>
 		</div>
 	</section>
 	<section id="team" class="team">
 		<div class="container" data-aos="fade-up">
 			<header class="section-header">
-				<h2>Speakers</h2>
+				<!-- <h2>Pendakwah</h2> -->
 				<p>Pendakwah</p>
 			</header>
 			<div class="row gy-4">
@@ -30,9 +30,9 @@
 							</div>
 						</div>
 						<div class="member-info">
-							<a href="#"><h4>{{ $p->name }}</h4></a>
+							<a href="{{ url('pendakwah/'.$p->id.'/'.Str::slug($p->name, '-')) }}"><h4>{{ $p->name }}</h4></a>
 							<!-- <span>{{ $p->image }}</span> -->
-							<p>{{ $p->description }}</p>
+							<p class="fst-italic">{{ $p->description }}</p>
 						</div>
 					</div>
 				</div>

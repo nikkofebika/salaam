@@ -8,7 +8,7 @@
 				<h2 data-aos="fade-up" data-aos-delay="400">The preferred Indonesian muslim channel The preferred Indonesian muslim channel</h2>
 				<div data-aos="fade-up" data-aos-delay="600">
 					<div class="text-center text-lg-start">
-						<a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+						<a href="javascript:void(0)" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center">
 							<span>Get Started</span>
 							<i class="bi bi-arrow-right"></i>
 						</a>
@@ -50,6 +50,7 @@
 				</div>
 				@endForeach
 			</div>
+			<center><a href="{{ url('pendakwah') }}" class="btn-buy rounded mt-5">Selengkapnya</a></center>
 		</div>
 	</section>
 
