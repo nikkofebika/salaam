@@ -34,18 +34,15 @@ Route::get('terms-of-service', function () {
 	return "TERMS OF SERVICE";
 });
 
-// Route::get('/console/login', [App\Http\Controllers\Console\AuthController::class, 'showLoginForm'])->name('console.login');
+// Route::get('console/login', [App\Http\Controllers\Console\AuthController::class, 'showLoginForm'])->name('console.login');
 // Route::post('/console/login_admin', [App\Http\Controllers\Console\AuthController::class, 'login']);
 
-Route::get('/console/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('console.login');
+Route::get('console', function(){return redirect('console/login');});
+Route::get('console/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('console.login');
 Route::post('/console/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('console.login');
 // Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
-	Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-});
+// Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'console', 'as' => 'console.', 'middleware' => 'auth'], function () {
 	Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
