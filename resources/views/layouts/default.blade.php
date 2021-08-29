@@ -55,13 +55,16 @@
 	@yield('content')
 	@include('layouts.includes.footer')
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-	<div class="modal fade" id="slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+	<div style="width:100%;height:200px; position:absolute; top: 0;">
+		<iframe width="100%" height="100%" src="https://koran-jakarta.com/images/article/pencegahan-paham-radikal-di-kampus-210829205511.jpg" allowfullscreen></iframe>
+	</div>
+	<!-- <div class="modal fade" id="slide-bottom-popup" data-keyboard="false" data-backdrop="false">
 		<div class="modal-body">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			<p>I'm a pop sliding from the bottom that's suppose to stick</p>
 			<a href="" class="btn-primary btn-plain btn popup-button">CTA</a>
 		</div>
-	</div>
+	</div> -->
 	<script src="{{ asset('backend/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
 	<script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
