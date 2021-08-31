@@ -42,7 +42,7 @@
 							</div>
 						</div>
 						<div class="member-info">
-							<a href="#"><h4>{{ $p->name }}</h4></a>
+							<a href="{{ url('pendakwah/'.$p->id.'/'.Str::slug($p->name, '-')) }}"><h4>{{ $p->name }}</h4></a>
 							<!-- <span>{{ $p->image }}</span> -->
 							<p>{{ $p->description }}</p>
 						</div>
