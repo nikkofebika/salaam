@@ -71,25 +71,16 @@
 </main>
 @endsection
 @push('scripts')
-<script src="{{ asset('assets/vendor/ytmodal/js/jquery-modal-video.js') }}"></script>
+<script src="{{ asset('assets/vendor/ytmodal/js/jquery-modal-video.min.js') }}"></script>
 <script type="text/javascript">
 	$(document).ready(function($) {
 		$(".play-video").modalVideo();
-		// $("body").on('click', '.play-video', function(){
-		// 	// $(this).click();
-		// 	$(this).modalVideo();
-		// });
-
 		var dataPlaylist = <?php echo json_encode($data_playlist) ?>;
 		var totalPlaylist = dataPlaylist.length;
 		$.each(dataPlaylist, function(i,data){
 			$.get(`{{ url('video/get_playlist_item') }}/`+data.playlist_id+'/'+data.seo_title, function(html){
 				$('#'+data.seo_title).html(html)
 			})
-			// if ((i+1) === totalPlaylist) {
-			// 	alert('oke')
-			// 	$('#add-script').append(`<script>$(".play-video-ajax").modalVideo()<\/script>`)
-			// }
 		})
 	});
 </script>

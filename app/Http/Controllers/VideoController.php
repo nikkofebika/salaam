@@ -30,7 +30,7 @@ class VideoController extends Controller {
 		
 		$html = '';
 		foreach ($videos as $v) {
-			$html .= '<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">';
+			$html .= '<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">';
 			$html .= '<div class="member">';
 			$html .= '<div class="yt_wrapper">';
 			$html .= '<img src="'.$v->mq_thumbnail.'" class="w-100 play-video-'.$playlist_id.'" alt="'.$v->title.'" data-video-id="'.$v->video_id.'">';
