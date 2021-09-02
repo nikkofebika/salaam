@@ -33,16 +33,16 @@ class VideoController extends Controller {
 			$html .= '<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">';
 			$html .= '<div class="member">';
 			$html .= '<div class="yt_wrapper">';
-			$html .= '<img src="'.$v->mq_thumbnail.'" class="w-100 play-video" alt="'.$v->title.'" youtubeid="'.$v->video_id.'">';
-			$html .= '<img class="play-btn play-video" src="'.asset('assets/img/icons/yt-button.svg').'" alt="Play button" width="70" youtubeid="'.$v->video_id.'">';
+			$html .= '<img src="'.$v->mq_thumbnail.'" class="w-100 play-video-'.$playlist_id.'" alt="'.$v->title.'" data-video-id="'.$v->video_id.'">';
+			$html .= '<img class="play-btn play-video-'.$playlist_id.'" src="'.asset('assets/img/icons/yt-button.svg').'" alt="Play button" width="70" data-video-id="'.$v->video_id.'">';
 			$html .= '</div>';
 			$html .= '<div class="member-info">';
 			$html .= '<a href="'.url('/video/'.$playlist_seo_title.'/'.$v->seo_title).'"><p style="font-weight: 700; color: #424143;">'.$v->title.'</p></a>';
 			$html .= '</div>';
 			$html .= '</div>';
 			$html .= '</div>';
-			$html .= '<script>$(".play-video").grtyoutube({autoPlay:true,theme: "dark"}).click(function(){$.get(`'. url("video/click_video") .'/`+$(this).attr("youtubeid"));})</script>';
 		}
+		$html .= '<script>$(".play-video-'.$playlist_id.'").modalVideo();</script>';
 		die($html);
 	}
 

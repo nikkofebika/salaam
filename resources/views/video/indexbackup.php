@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @push('styles')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/ytmodal/css/modal-video.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/ytPopup/grt-youtube-popup.css') }}">
 <style type="text/css">
 	.yt_wrapper {
 		position:relative;
@@ -19,6 +19,12 @@
 	}
 	.play-btn:focus {
 		outline:0;
+	}
+	.grtyoutube-popup {
+		display: flex !important;
+	}
+	.grtyoutube-popup-content {
+		margin: auto!important;
 	}
 </style>
 @endpush
@@ -41,11 +47,11 @@
 			</header>
 			<div class="row gy-4">
 				@foreach ($latest_videos as $v)
-				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+				<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
 					<div class="member">
 						<div class="yt_wrapper">
-							<img src="{{ asset($v->mq_thumbnail) }}" class="w-100 play-video" alt="{{ $v->title }}" data-video-id="{{ $v->video_id }}">
-							<img class="play-btn play-video" src="{{ asset('assets/img/icons/yt-button.svg') }}" alt="Play button" width="70" data-video-id="{{ $v->video_id }}">
+							<img src="{{ asset($v->mq_thumbnail) }}" class="w-100 play-video" alt="{{ $v->title }}" youtubeid="{{ $v->video_id }}">
+							<img class="play-btn play-video" src="{{ asset('assets/img/icons/yt-button.svg') }}" alt="Play button" width="70" youtubeid="{{ $v->video_id }}">
 						</div>
 						<div class="member-info">
 							<a href="{{ url('/video/terbaru/'.$v->seo_title) }}"><p style="font-weight: 700; color: #424143;">{{ $v->title }}</p></a>
@@ -71,27 +77,21 @@
 </main>
 @endsection
 @push('scripts')
-<script src="{{ asset('assets/vendor/ytmodal/js/jquery-modal-video.js') }}"></script>
+<script src="{{ asset('assets/vendor/ytPopup/grt-youtube-popup.js') }}"></script>
 <script type="text/javascript">
 	$(document).ready(function($) {
-		$(".play-video").modalVideo();
-		// $("body").on('click', '.play-video', function(){
-		// 	// $(this).click();
-		// 	$(this).modalVideo();
-		// });
-
+		$(".play-video").grtyoutube({
+			autoPlay:true,
+			theme: "dark"
+		}).click(function(){
+			$.get("{{ url('video/click_video') }}/"+$(this).attr('youtubeid'));
+		})
 		var dataPlaylist = <?php echo json_encode($data_playlist) ?>;
-		var totalPlaylist = dataPlaylist.length;
 		$.each(dataPlaylist, function(i,data){
 			$.get(`{{ url('video/get_playlist_item') }}/`+data.playlist_id+'/'+data.seo_title, function(html){
 				$('#'+data.seo_title).html(html)
 			})
-			// if ((i+1) === totalPlaylist) {
-			// 	alert('oke')
-			// 	$('#add-script').append(`<script>$(".play-video-ajax").modalVideo()<\/script>`)
-			// }
 		})
 	});
 </script>
-<div id="add-script"></div>
 @endpush

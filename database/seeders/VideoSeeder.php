@@ -134,20 +134,20 @@ class VideoSeeder extends Seeder
         ];
         foreach($vp as $p) {
           \App\Models\Video::create([
-             "playlist_id" => $p["playlist_id"],
-             "video_id" => $p["video_id"],
-             "title" => $p["title"],
-             "seo_title" => $p["seo_title"],
-             "description" => $p["description"],
-             "approved_by" => $p["approved_by"],
-             "mq_thumbnail" => $p["mq_thumbnail"],
-             "hq_thumbnail" => $p["hq_thumbnail"],
-             "meta_keywords" => $p["meta_keywords"],
-             "tgl_upload" => $p["tgl_upload"],
-             "duration" => $p["duration"],
-             "click" => $p["click"],
-             "created_by" => $p["created_by"],
-         ]);
+           "playlist_id" => $p["playlist_id"],
+           "video_id" => $p["video_id"],
+           "title" => $p["title"],
+           "seo_title" => $p["seo_title"],
+           "description" => $p["description"],
+           "approved_by" => $p["approved_by"],
+           "mq_thumbnail" => $p["mq_thumbnail"],
+           "hq_thumbnail" => $p["hq_thumbnail"],
+           "meta_keywords" => $p["meta_keywords"],
+           "tgl_upload" => $p["tgl_upload"],
+           "duration" => $p["duration"],
+           "click" => $p["click"],
+           "created_by" => $p["created_by"],
+       ]);
       }
   }
 }

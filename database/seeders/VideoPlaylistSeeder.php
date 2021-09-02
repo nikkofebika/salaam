@@ -86,7 +86,7 @@ class VideoPlaylistSeeder extends Seeder
                 "created_by" => 1,
             ],
             [
-                "playlist_id" => "PLoBcXpennJCvEbBQZXZxxSAY2Zi-k0Cpx",
+                "playlist_id" => "PLoBcXpennJCviIOCcJI3WG73EE2HqRLo6",
                 "title" => "Ustadzah Badriyah Fayumi",
                 "seo_title" => "ustadzah-badriyah-fayumi",
                 "priority" => 8,
