@@ -126,7 +126,7 @@ class VideoPlaylistSeeder extends Seeder
                 "created_by" => 1,
             ],
             [
-                "playlist_id" => "PLoBcXpennJCsSWTtColWL3rroBR258MDT",
+                "playlist_id" => "PLoBcXpennJCvU1QsM0gpoIKNy5-Es3ph4",
                 "title" => "K.H Misbahul Munir Kholil M.A",
                 "seo_title" => "kh-misbahul-munir-kholil-ma",
                 "priority" => 12,
